@@ -255,8 +255,9 @@ $isAdmin = ApplicationHelper::isAdmin();
                         </li>
 						
 						<li>
-							<a href="<?=$baseUrl ?>/?r=login-history/index">
-								<i class="fa fa-circle"></i>Login History
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+								<i data-feather="users"></i>
+                                <span>Visitors IP Address</span>
 							</a>
 						</li>
 						
