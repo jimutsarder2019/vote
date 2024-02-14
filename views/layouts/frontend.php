@@ -260,34 +260,6 @@ $isAdmin = ApplicationHelper::isAdmin();
                                 <span>Router</span>
                             </a>
                         </li>
-						
-						<li>
-                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=syslog/index">
-                                <i data-feather="search"></i>
-                                <span>Active Log</span>
-                            </a>
-                        </li>
-						
-						<li>
-                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=syslog/search">
-                                <i data-feather="search"></i>
-                                <span>Log Search</span>
-                            </a>
-                        </li>
-						
-						<li>
-                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=syslog/report">
-                                <i data-feather="download"></i>
-                                <span>Download Log</span>
-                            </a>
-                        </li>
-						
-						<li>
-                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=report-backup/index">
-                                <i data-feather="download"></i>
-                                <span>Request Generated Log</span>
-                            </a>
-                        </li>
 
 
 
