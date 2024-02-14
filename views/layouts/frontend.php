@@ -255,6 +255,12 @@ $isAdmin = ApplicationHelper::isAdmin();
                         </li>
 						
 						<li>
+							<a href="<?=$baseUrl ?>/?r=login-history/index">
+								<i class="fa fa-circle"></i>Login History
+							</a>
+						</li>
+						
+						<li>
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
                                 <i data-feather="wifi"></i>
                                 <span>Router</span>
