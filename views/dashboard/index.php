@@ -111,7 +111,7 @@ $baseUrl = Url::base();
 						<div class="media static-top-widget align-items-center">
 							<div class="icons-widgets">
 								<div class="align-self-center text-center">
-									<i data-feather="wifi" class="font-secondary"></i>
+									<i data-feather="users" class="font-secondary"></i>
 								</div>
 							</div>
 							<div class="media-body media-doller">
@@ -129,7 +129,7 @@ $baseUrl = Url::base();
 						<div class="media static-top-widget align-items-center">
 							<div class="icons-widgets">
 								<div class="align-self-center text-center"><i
-										class="fa fa-calendar"></i></div>
+										class="fa fa-users"></i></div>
 							</div>
 							<div class="media-body media-doller"><span class="m-0">Call Done</span>
 								<p class="mb-0"><span class="counter"><?=@$uptime?></span> Days</p>
@@ -144,7 +144,7 @@ $baseUrl = Url::base();
 					<div class="primary-box card-body">
 						<div class="media static-top-widget align-items-center">
 							<div class="icons-widgets">
-								<div class="align-self-center text-center" style="background-color:#FFFF00"><i class="fa fa-archive"></i></div>
+								<div class="align-self-center text-center" style="background-color:#FFFF00"><i class="fa fa-users"></i></div>
 							</div>
 							<div class="media-body media-doller"><span class="m-0">Today Visits</span>
 								<h3 class="mb-0"><span class="counter"><?=@$disk_use?></span>%</h3>
@@ -159,7 +159,7 @@ $baseUrl = Url::base();
 					<div class="danger-box card-body">
 						<div class="media static-top-widget align-items-center">
 							<div class="icons-widgets">
-								<div class="align-self-center text-center" style="background-color:#A020F0"><i data-feather="message-square"
+								<div class="align-self-center text-center" style="background-color:#A020F0"><i data-feather="users"
 										class="font-danger"></i></div>
 							</div>
 							<div class="media-body media-doller"><span class="m-0">Today Call</span>
