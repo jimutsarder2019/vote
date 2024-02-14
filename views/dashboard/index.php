@@ -97,7 +97,7 @@ $baseUrl = Url::base();
 								</div>
 							</div>
 							<div class="media-body media-doller">
-								<span class="m-0">Active User</span>
+								<span class="m-0">All Visitors</span>
 								<h3 class="mb-0"><span class="js-user-counter"><?=@$users_count?></span>
 								</h3>
 							</div>
@@ -115,7 +115,7 @@ $baseUrl = Url::base();
 								</div>
 							</div>
 							<div class="media-body media-doller">
-								<span class="m-0">Router</span>
+								<span class="m-0">Visit Done</span>
 								<h3 class="mb-0"><span class="counter"><?=@$router_count?></span>
 								</h3>
 							</div>
@@ -131,7 +131,7 @@ $baseUrl = Url::base();
 								<div class="align-self-center text-center"><i
 										class="fa fa-calendar"></i></div>
 							</div>
-							<div class="media-body media-doller"><span class="m-0">Uptime</span>
+							<div class="media-body media-doller"><span class="m-0">Call Done</span>
 								<p class="mb-0"><span class="counter"><?=@$uptime?></span> Days</p>
 							</div>
 						</div>
@@ -146,7 +146,7 @@ $baseUrl = Url::base();
 							<div class="icons-widgets">
 								<div class="align-self-center text-center" style="background-color:#FFFF00"><i class="fa fa-archive"></i></div>
 							</div>
-							<div class="media-body media-doller"><span class="m-0">Disk Usage</span>
+							<div class="media-body media-doller"><span class="m-0">Today Visits</span>
 								<h3 class="mb-0"><span class="counter"><?=@$disk_use?></span>%</h3>
 							</div>
 						</div>
@@ -162,7 +162,7 @@ $baseUrl = Url::base();
 								<div class="align-self-center text-center" style="background-color:#A020F0"><i data-feather="message-square"
 										class="font-danger"></i></div>
 							</div>
-							<div class="media-body media-doller"><span class="m-0">Disk Free</span>
+							<div class="media-body media-doller"><span class="m-0">Today Call</span>
 								<h3 class="mb-0"><span class="counter"><?=@$disk_free?></span>%</h3>
 							</div>
 						</div>
