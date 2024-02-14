@@ -169,64 +169,6 @@ $baseUrl = Url::base();
 					</div>
 				</div>
 			</div>
-			<div class="col-xxl-3 col-md-3 xl-25">
-				<div class="card o-hidden widget-cards">
-					<div class="warning-box card-body">
-						<div class="media static-top-widget align-items-center">
-							<div class="icons-widgets">
-								<div class="align-self-center text-center">
-									<i
-										class="fa fa-desktop"></i>
-								</div>
-							</div>
-							<div class="media-body media-doller">
-								<span class="m-0">CPU</span>
-								<h3 class="mb-0"><span class="counter"><?=@$cpu?></span>%
-								</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-xxl-3 col-md-3 xl-25">
-				<div class="card o-hidden widget-cards">
-					<div class="secondary-box card-body">
-						<div class="media static-top-widget align-items-center">
-							<div class="icons-widgets">
-								<div class="align-self-center text-center" style="background-color:#0000FF">
-									<i data-feather="users"></i>
-								</div>
-							</div>
-							<div class="media-body media-doller">
-								<span class="m-0">Max User</span>
-								<h3 class="mb-0"><span class="counter"><?=@$max_user_count_limit?></span>
-								</h3>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="col-xxl-3 col-md-3 xl-25">
-				<div class="card o-hidden widget-cards">
-					<div class="danger-box card-body">
-						<div class="media static-top-widget align-items-center">
-							<div class="icons-widgets">
-								<div class="align-self-center text-center"><i
-										class="fa fa-clock-o"></i></div>
-							</div>
-							<div class="media-body media-doller"><span class="m-0">Support Expired</span>
-								<p class="mb-0"><?=@$license_expire?></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-		
-
-
 
 		</div>
 	</div>
