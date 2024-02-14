@@ -93,13 +93,6 @@ class DashboardController extends CustomController
 		'user_data'=>$users,
 		'users_count'=>0, 
 		'router_count'=>count($routers),
-		'cpu'=>$cpuUtilization,
-		'ram'=>round($ramUtilization, 2),
-		'disk_use'=>round($used_percentage_formatted, 2),
-		'disk_free'=>round($remaining_percentage_formatted, 2),
-		'uptime'=>$days,
-		'max_user_count_limit'=>@$license_data['maximum_number_of_user_allow'],
-		'license_expire'=>@$license_data['license_expire']
 		]);
     }
 }
