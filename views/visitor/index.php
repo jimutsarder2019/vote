@@ -77,3 +77,53 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]); ?>
 </div>
+
+
+
+<div class="page-body">
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="page-header">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-header-left">
+						<h3>Activity Log <span style="font-size:18px;text-transform: capitalize;">(24 Hours)</span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
+
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						<?= GridView::widget([
+								'dataProvider' => $dataProvider,
+								'filterModel' => $searchModel,
+								'columns' => [
+									//['class' => 'yii\grid\SerialColumn'],
+
+									'id',
+									'date',
+									'time',
+									'ip',
+									'lat',
+									'lng',
+									
+									[
+										'class' => 'yii\grid\ActionColumn',
+										'template' => '{view} {delete}'
+									],
+								],
+							]); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
+</div>
