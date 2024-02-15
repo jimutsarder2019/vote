@@ -2,8 +2,8 @@
 
 namespace app\controllers;
 
-use common\helpers\ImageHelper;
-use common\helpers\S3bucketHelper;
+use app\components\ImageHelper;
+use app\components\S3bucketHelper;
 use Yii;
 use app\models\HomepagePopup;
 use app\models\SearchHomepagePopup;

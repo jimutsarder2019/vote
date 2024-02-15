@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
-use common\helpers\S3bucketHelper;
+use app\components\S3bucketHelper;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\SearchHomepagePopup */
