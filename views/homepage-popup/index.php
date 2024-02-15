@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label' => 'Image',
                 'format' => 'raw',
                 'value' => function ($model) {
-                    return Html::a(Html::img(S3bucketHelper::get_storage_image_url(Yii::$app->params['homepagePopup'],$model->image_url), ['width' => '100px']), S3bucketHelper::get_storage_image_url(Yii::$app->params['homepagePopup'],$model->image_url), ['data-pjax' => 0, 'target' => '_blank']);
+                    return Html::a(Html::img(S3bucketHelper::get_storage_image_url('homepage_popup',$model->image_url), ['width' => '100px']), S3bucketHelper::get_storage_image_url('homepage_popup',$model->image_url), ['data-pjax' => 0, 'target' => '_blank']);
                 },
             ],
             'image_link:ntext',
