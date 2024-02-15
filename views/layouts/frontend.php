@@ -162,14 +162,6 @@ $isAdmin = ApplicationHelper::isAdmin();
                         </li>
                        
                         <li class="onhover-dropdown">
-                            <div class="media align-items-center">
-									<img height="50px" class="align-self-center pull-right img-50 blur-up lazyloaded"
-                                    src="<?=$baseUrl?>/<?=@$company_dashboard_logo?>" alt="header-user">
-                                <div class="dotted-animation">
-                                    <span class="animate-circle"></span>
-                                    <span class="main-circle"></span>
-                                </div>
-                            </div>
                             <ul style="display:none" class="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
                                 <li>
                                     <a href="<?=$baseUrl ?>/?r=users/update">
