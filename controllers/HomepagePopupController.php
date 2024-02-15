@@ -1,12 +1,12 @@
 <?php
 
-namespace backend\controllers;
+namespace app\controllers;
 
 use common\helpers\ImageHelper;
 use common\helpers\S3bucketHelper;
 use Yii;
-use backend\models\HomepagePopup;
-use backend\models\SearchHomepagePopup;
+use app\models\HomepagePopup;
+use app\models\SearchHomepagePopup;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

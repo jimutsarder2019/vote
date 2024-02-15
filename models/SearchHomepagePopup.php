@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\models;
+namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\HomepagePopup;
+use app\models\HomepagePopup;
 
 /**
  * SearchHomepagePopup represents the model behind the search form of `backend\models\HomepagePopup`.
