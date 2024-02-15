@@ -11,9 +11,15 @@ $this->params['breadcrumbs'][] = ['label' => 'Homepage Popups', 'url' => ['index
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="homepage-popup-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="page-body">
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="page-header">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="page-header-left">
+						    <h3><?= Html::encode($this->title) ?></h3>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
@@ -25,8 +31,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
     </p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
 
-    <?= DetailView::widget([
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+					 <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
             'id',
@@ -38,5 +56,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'expire_date',
         ],
     ]) ?>
-
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
 </div>
