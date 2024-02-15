@@ -22,17 +22,7 @@ use yii\widgets\ActiveForm;
         <div class="col-md-6">
             <div class="form-group">
                 <label class="control-label">Expire Date</label>
-                <?= yii\jui\DatePicker::widget([
-                    'model' => $model,
-                    'attribute' => 'expire_date',
-                    'language' => 'en',
-                    'options' =>['class'=>'form-control'],
-                    'dateFormat' => 'yyyy-MM-dd',
-                    'clientOptions' => [
-                        'minDate' => 0
-                    ]
-                ]);
-                ?>
+                
             </div>
         </div>
     </div>

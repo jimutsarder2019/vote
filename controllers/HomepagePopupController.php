@@ -67,6 +67,7 @@ class HomepagePopupController extends Controller
      */
     public function actionView($id)
     {
+		$this->layout = 'frontend';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -79,6 +80,7 @@ class HomepagePopupController extends Controller
      */
     public function actionCreate()
     {
+		$this->layout = 'frontend';
         $model = new HomepagePopup();
         $model->scenario = 'create';
         $date = new \DateTime();
@@ -141,6 +143,7 @@ class HomepagePopupController extends Controller
      */
     public function actionUpdate($id)
     {
+		$this->layout = 'frontend';
         $model = $this->findModel($id);
         $date = new \DateTime();
         $previous_image = $model->image_url;
