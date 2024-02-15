@@ -144,7 +144,7 @@ class HomepagePopupController extends Controller
         $model = $this->findModel($id);
         $date = new \DateTime();
         $previous_image = $model->image_url;
-        $domestic_airlines_image_directory = Yii::$app->params['homepagePopup'];
+        $domestic_airlines_image_directory = 'homepage_popup';
 
         if ($model->load(Yii::$app->request->post())) {
             $airlines_image = UploadedFile::getInstance($model, 'image_url');
