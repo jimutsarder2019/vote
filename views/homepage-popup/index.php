@@ -11,18 +11,35 @@ use app\components\S3bucketHelper;
 $this->title = 'Homepage Popups';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="homepage-popup-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Homepage Popup', ['create'], ['class' => 'btn btn-success']) ?>
+<div class="page-body">
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="page-header">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="page-header-left">
+						<h3>Visitors IP Address</h3>
+						
+						<div class="box-footer2">
+							<?= Html::a('Create Homepage Popup', ['create'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Active All', ['homepage-popup-active-all'], ['class' => 'btn btn-success']) ?>
         <?= Html::a('Inactive All', ['homepage-popup-inactive-all'], ['class' => 'btn btn-danger']) ?>
-    </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
 
-    <?= GridView::widget([
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="card">
+					<div class="card-body">
+						 <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -50,4 +67,25 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
+</div>
+
+
+<div class="homepage-popup-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <p>
+        <?= Html::a('Create Homepage Popup', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Active All', ['homepage-popup-active-all'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Inactive All', ['homepage-popup-inactive-all'], ['class' => 'btn btn-danger']) ?>
+    </p>
+
+   
 </div>
