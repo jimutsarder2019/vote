@@ -183,6 +183,7 @@ class VisitorController extends Controller
      */
     public function actionView($id)
     {
+		$this->layout = 'frontend';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);

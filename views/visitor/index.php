@@ -18,9 +18,9 @@ $this->params['breadcrumbs'][] = $this->title;
 	<div class="container-fluid">
 		<div class="page-header">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 					<div class="page-header-left">
-						<h3>Activity Log <span style="font-size:18px;text-transform: capitalize;">(24 Hours)</span></h3>
+						<h3>Visitors IP Address</h3>
 						
 						<div class="box-footer2">
 							<a href="<?php echo Url::to(['visitor/index?type=today']); ?>" class='btn btn-success'>Today (<?=@$today_count?>)</a>
