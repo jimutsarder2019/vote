@@ -156,14 +156,6 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="nav-right col">
                     <ul class="nav-menus">
                         <li>
-                            <div class="form-inline search-form-v2">
-                                <div class="search-area">
-                                    <input name="search" type="text" class="search-input global_search" placeholder="Search..">  
-									<button type="submit" class="global_search_btn"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
                             <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
                                 <i data-feather="maximize-2"></i>
                             </a>
@@ -234,11 +226,7 @@ $isAdmin = ApplicationHelper::isAdmin();
 							
 					<?php if(!Yii::$app->user->isGuest){ ?>
 						<div class="sidebar-user">
-							<?php if(@$user_picture){ ?>
-							    <img class="img-60" src="<?=$baseUrl?>/<?=@$user_picture?>" alt="#">
-							<?php }else{ ?>
-							    <img class="img-60" src="<?=$baseUrl?>/template/images/dashboard/user3.jpg" alt="#">
-							<?php } ?>
+								<img class="img-60" src="<?=$baseUrl?>/template/images/dashboard/user3.jpg" alt="#">
 							<div>
 								<h6 class="f-14"><?=Yii::$app->user->identity->username;?></h6>
 							</div>
