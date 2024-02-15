@@ -58,7 +58,7 @@ class VisitorController extends Controller
     
     public function actionIndex()
     {
-        
+        $this->layout = 'frontend';
         $current_date = new \DateTime();
         $start_date = $current_date->format('Y-m-d');
         $m_start_date = $start_date;
