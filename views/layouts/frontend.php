@@ -31,7 +31,7 @@ $isAdmin = ApplicationHelper::isAdmin();
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="<?=$baseUrl?>/<?=$favicon_logo?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?=$baseUrl?>/<?=$favicon_logo?>" type="image/x-icon">
-    <title><?=$company_name?> | Log Server</title>
+    <title>ISPAB | Voter 2024</title>
 
     <!-- Google font-->
     <link rel="stylesheet"
@@ -140,7 +140,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="main-header-left d-lg-none w-auto">
                     <div class="logo-wrapper">
                         <a href="<?=$baseUrl;?>">
-							<?=@$company_name?>
+							ISPAB
                         </a>
                     </div>
                 </div>
@@ -156,28 +156,12 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="nav-right col">
                     <ul class="nav-menus">
                         <li>
-                            <div class="form-inline search-form-v2">
-                                <div class="search-area">
-                                    <input name="search" type="text" class="search-input global_search" placeholder="Search..">  
-									<button type="submit" class="global_search_btn"><i class="fa fa-search"></i></button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
                             <a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()">
                                 <i data-feather="maximize-2"></i>
                             </a>
                         </li>
                        
                         <li class="onhover-dropdown">
-                            <div class="media align-items-center">
-									<img height="50px" class="align-self-center pull-right img-50 blur-up lazyloaded"
-                                    src="<?=$baseUrl?>/<?=@$company_dashboard_logo?>" alt="header-user">
-                                <div class="dotted-animation">
-                                    <span class="animate-circle"></span>
-                                    <span class="main-circle"></span>
-                                </div>
-                            </div>
                             <ul style="display:none" class="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
                                 <li>
                                     <a href="<?=$baseUrl ?>/?r=users/update">
@@ -224,7 +208,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="main-header-left d-none d-lg-block">
                     <div class="logo-wrapper">
                         <a href="<?=$baseUrl?>">
-                            <?=$company_name?>
+                            ISPAB
                         </a>
                     </div>
                 </div>
@@ -234,11 +218,7 @@ $isAdmin = ApplicationHelper::isAdmin();
 							
 					<?php if(!Yii::$app->user->isGuest){ ?>
 						<div class="sidebar-user">
-							<?php if(@$user_picture){ ?>
-							    <img class="img-60" src="<?=$baseUrl?>/<?=@$user_picture?>" alt="#">
-							<?php }else{ ?>
-							    <img class="img-60" src="<?=$baseUrl?>/template/images/dashboard/user3.jpg" alt="#">
-							<?php } ?>
+								<img class="img-60" src="<?=$baseUrl?>/template/images/dashboard/user3.jpg" alt="#">
 							<div>
 								<h6 class="f-14"><?=Yii::$app->user->identity->username;?></h6>
 							</div>
@@ -260,13 +240,42 @@ $isAdmin = ApplicationHelper::isAdmin();
                                 <span>Visitors IP Address</span>
 							</a>
 						</li>
+						<li>
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+								<i data-feather="users"></i>
+                                <span>Visit Done</span>
+							</a>
+						</li>
+						<li>
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+								<i data-feather="users"></i>
+                                <span>Call Done</span>
+							</a>
+						</li>
 						
 						<li>
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
-                                <i data-feather="wifi"></i>
-                                <span>Router</span>
+                                <i data-feather="home"></i>
+                                <span>POP UP </span>
                             </a>
                         </li>
+						
+						<li>
+                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
+                                <i data-feather="search"></i>
+                                <span>Search with download </span>
+                            </a>
+                        </li>
+						
+						<li>
+                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
+                                <i data-feather="users"></i>
+                                <span>Voter List</span>
+                            </a>
+                        </li>
+						
+						
+						<?php if(0){ ?>
 
 
 
@@ -335,6 +344,8 @@ $isAdmin = ApplicationHelper::isAdmin();
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=site/system"><i
                                     data-feather="archive"></i><span>System Information</span></a>
                         </li>
+						
+						<?php } ?>
 						
 						
 						<?php
@@ -454,14 +465,11 @@ $isAdmin = ApplicationHelper::isAdmin();
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
-					    <div class="col-md-12 footer-copyright text-start">
-                            <p class="mb-0">Support: <i class="fa fa-phone"></i> <a href="tel:+8801617622600">01617622600</a>, <a href="tel:+8809610203060">09610203060</a> <i class="fa fa-envelope"></i> <a href="mailto:support@cloudhub.com.bd">support@cloudhub.com.bd</a></p>
-                        </div>
                         <div class="col-md-6 footer-copyright text-start">
-                            <p class="mb-0">Copyright <?= date('Y') ?> © <?=$company_name?> All rights reserved.</p>
+                            <p class="mb-0">Copyright <?= date('Y') ?> © ISPAB All rights reserved.</p>
                         </div>
                         <div class="col-md-6 pull-right text-end">
-                            <p class=" mb-0">Design & Developed by <a target="_blank" href="https://cloudhub.com.bd/"><img width="50" height="30" src="<?=$baseUrl?>/image/powered_by.png"></a></p>
+                            <p class=" mb-0">Design & Developed by <a target="_blank" href="https://zubairitexpert.net/">Zubair IT</a></p>
                         </div>
                     </div>
                 </div>

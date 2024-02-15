@@ -27,7 +27,7 @@ $company_phone = ApplicationHelper::getCompanyName('company_phone');
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="<?=$baseUrl?>/<?=$favicon_logo?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?=$baseUrl?>/<?=$favicon_logo?>" type="image/x-icon">
-    <title><?=$company_name?> | Log Server</title>
+    <title>ISPAB | Voter 2024</title>
 
     <!-- Google font-->
     <link rel="stylesheet"
@@ -129,18 +129,6 @@ $company_phone = ApplicationHelper::getCompanyName('company_phone');
     <!--script admin-->
     <script src="<?=$baseUrl?>/template/js/admin-script.js"></script>
     <script src="<?=$baseUrl?>/js/welcome.js"></script>
-    <script>
-        $('.single-item').slick({
-            arrows: false,
-            dots: true
-        });
-		
-		    $('#box').particleground({
-        dotColor : '#808080',
-        lineColor : '#808080',
-        parallax : true
-    });
-    </script>
 
 </body>
 

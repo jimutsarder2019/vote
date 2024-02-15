@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\LoginHistorySearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Login Histories';
+$this->title = 'Visitors IP Address';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
