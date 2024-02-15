@@ -49,6 +49,7 @@ class HomepagePopupController extends Controller
      */
     public function actionIndex()
     {
+		$this->layout = 'frontend';
         $searchModel = new SearchHomepagePopup();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
