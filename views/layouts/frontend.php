@@ -263,8 +263,15 @@ $isAdmin = ApplicationHelper::isAdmin();
 						
 						<li>
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
-                                <i data-feather="wifi"></i>
-                                <span>Router</span>
+                                <i data-feather="search"></i>
+                                <span>Search with download </span>
+                            </a>
+                        </li>
+						
+						<li>
+                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
+                                <i data-feather="users"></i>
+                                <span>Voter List</span>
                             </a>
                         </li>
 
