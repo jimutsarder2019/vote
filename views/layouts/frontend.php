@@ -275,7 +275,7 @@ $isAdmin = ApplicationHelper::isAdmin();
 						
 						<li>
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
-                                <i data-feather="search"></i>
+                                <i data-feather="home"></i>
                                 <span>POP UP </span>
                             </a>
                         </li>
