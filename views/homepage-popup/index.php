@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="page-header-left">
-						<h3>Visitors IP Address</h3>
+						    <h3><?= Html::encode($this->title) ?></h3>
 						
 						<div class="box-footer2">
 							<?= Html::a('Create Homepage Popup', ['create'], ['class' => 'btn btn-success']) ?>
@@ -73,19 +73,4 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 	</div>
 	<!-- Container-fluid Ends-->
-</div>
-
-
-<div class="homepage-popup-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Homepage Popup', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Active All', ['homepage-popup-active-all'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Inactive All', ['homepage-popup-inactive-all'], ['class' => 'btn btn-danger']) ?>
-    </p>
-
-   
 </div>
