@@ -129,18 +129,6 @@ $company_phone = ApplicationHelper::getCompanyName('company_phone');
     <!--script admin-->
     <script src="<?=$baseUrl?>/template/js/admin-script.js"></script>
     <script src="<?=$baseUrl?>/js/welcome.js"></script>
-    <script>
-        $('.single-item').slick({
-            arrows: false,
-            dots: true
-        });
-		
-		    $('#box').particleground({
-        dotColor : '#808080',
-        lineColor : '#808080',
-        parallax : true
-    });
-    </script>
 
 </body>
 
