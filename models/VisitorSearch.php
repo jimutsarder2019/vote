@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\models;
+namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Visitor;
+use app\models\Visitor;
 
 /**
  * VisitorSearch represents the model behind the search form of `app\models\Visitor`.

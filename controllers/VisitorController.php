@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\controllers;
+namespace app\controllers;
 
 use Yii;
-use backend\models\Visitor;
-use backend\models\VisitorSearch;
+use app\models\Visitor;
+use app\models\VisitorSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
