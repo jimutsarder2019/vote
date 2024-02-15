@@ -1,7 +1,7 @@
 <?php
 
 //hotel
-namespace common\helpers;
+namespace app\components;
 
 
 use Aws\S3\Exception\S3Exception;
