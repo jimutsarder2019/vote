@@ -260,6 +260,18 @@ $isAdmin = ApplicationHelper::isAdmin();
                                 <span>Visitors IP Address</span>
 							</a>
 						</li>
+						<li>
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+								<i data-feather="users"></i>
+                                <span>Visit Done</span>
+							</a>
+						</li>
+						<li>
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+								<i data-feather="users"></i>
+                                <span>Call Done</span>
+							</a>
+						</li>
 						
 						<li>
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
