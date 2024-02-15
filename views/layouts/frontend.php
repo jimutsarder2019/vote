@@ -31,7 +31,7 @@ $isAdmin = ApplicationHelper::isAdmin();
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="<?=$baseUrl?>/<?=$favicon_logo?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?=$baseUrl?>/<?=$favicon_logo?>" type="image/x-icon">
-    <title><?=$company_name?> | Log Server</title>
+    <title>ISPAB | Voter 2024</title>
 
     <!-- Google font-->
     <link rel="stylesheet"
@@ -140,7 +140,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="main-header-left d-lg-none w-auto">
                     <div class="logo-wrapper">
                         <a href="<?=$baseUrl;?>">
-							<?=@$company_name?>
+							ISPAB
                         </a>
                     </div>
                 </div>
@@ -224,7 +224,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="main-header-left d-none d-lg-block">
                     <div class="logo-wrapper">
                         <a href="<?=$baseUrl?>">
-                            <?=$company_name?>
+                            ISPAB
                         </a>
                     </div>
                 </div>
