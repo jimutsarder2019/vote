@@ -293,6 +293,9 @@ $isAdmin = ApplicationHelper::isAdmin();
                                 <span>Voter List</span>
                             </a>
                         </li>
+						
+						
+						<?php if(0){ ?>
 
 
 
@@ -361,6 +364,8 @@ $isAdmin = ApplicationHelper::isAdmin();
                             <a class="sidebar-header" href="<?=$baseUrl ?>/?r=site/system"><i
                                     data-feather="archive"></i><span>System Information</span></a>
                         </li>
+						
+						<?php } ?>
 						
 						
 						<?php
