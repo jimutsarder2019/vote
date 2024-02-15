@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <a href="<?php echo Url::to(['visitor/index?type=month']); ?>" class='btn btn-success'>This Month (<?=@$month_count?>)</a>
         <a href="<?php echo Url::to(['visitor/index']); ?>" class='btn btn-success'>All (<?=@$all_count?>)</a>
     </div>
+	
+	<?php if(0){ ?>
     
      <?= Html::beginForm(['visitor/index'.@$search_parameter], 'post', ['enctype' => 'multipart/form-data']) ?>
             <div class="box-body">
@@ -53,6 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <?= Html::submitButton('Submit', ['class' => 'btn btn-success']) ?>
             <?= Html::endForm() ?>
+			<?php  } ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
