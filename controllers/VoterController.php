@@ -38,6 +38,7 @@ class VoterController extends Controller
      */
     public function actionIndex()
     {
+		$this->layout = 'frontend';
         $searchModel = new VoterSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
