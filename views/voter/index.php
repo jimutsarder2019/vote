@@ -22,9 +22,10 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-lg-6">
 					<div class="page-header-left">
 						<h3><?= Html::encode($this->title) ?></h3>
+						</br>
 						<p>
-        <?= Html::a('Create Voter', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+							<?= Html::a('Create Voter', ['create'], ['class' => 'btn btn-success']) ?>
+						</p>
 					</div>
 				</div>
 			</div>
