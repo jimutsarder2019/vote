@@ -94,6 +94,7 @@ class VoterController extends Controller
      */
     public function actionUpdate($id)
     {
+		$this->layout = 'frontend';
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
