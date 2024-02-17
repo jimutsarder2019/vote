@@ -56,6 +56,7 @@ class VoterController extends Controller
      */
     public function actionView($id)
     {
+		$this->layout = 'frontend';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -68,6 +69,7 @@ class VoterController extends Controller
      */
     public function actionCreate()
     {
+		$this->layout = 'frontend';
         $model = new Voter();
 
         if ($this->request->isPost) {
