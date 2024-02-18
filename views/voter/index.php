@@ -55,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										'label' => 'Call Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
 										'content' => function ($model) {
-											return ($model->call_done)?'Yes':'Call';
+											return ($model->call_done)?'Yes':'<a href="javascript:void(0)">Call</a>';
 										}
 									],
 									[
