@@ -148,8 +148,10 @@ $baseUrl = Url::base();
 							<div class="icons-widgets">
 								<div class="align-self-center text-center" style="background-color:#FFFF00"><i class="fa fa-users"></i></div>
 							</div>
-							<div class="media-body media-doller"><span class="m-0">Today Visits</span>
-								<h3 class="mb-0"><span class="counter"><?=@$disk_use?></span>%</h3>
+							<div class="media-body media-doller">
+								<span class="m-0">Today Visits</span>
+								<h3 class="mb-0"><span class="counter"><?=@$visit_done_date?></span>
+								</h3>
 							</div>
 						</div>
 					</div>
@@ -164,8 +166,10 @@ $baseUrl = Url::base();
 								<div class="align-self-center text-center" style="background-color:#A020F0"><i data-feather="users"
 										class="font-danger"></i></div>
 							</div>
-							<div class="media-body media-doller"><span class="m-0">Today Call</span>
-								<h3 class="mb-0"><span class="counter"><?=@$disk_free?></span>%</h3>
+							<div class="media-body media-doller">
+								<span class="m-0">Today Call</span>
+								<h3 class="mb-0"><span class="counter"><?=@$call_done_date?></span>
+								</h3>
 							</div>
 						</div>
 					</div>
