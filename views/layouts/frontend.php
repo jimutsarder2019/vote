@@ -129,6 +129,10 @@ $isAdmin = ApplicationHelper::isAdmin();
 		color: #FFFFFF;
 	}
 	
+	* a {
+		color: #ff8100;
+	}
+	
 	.page-wrapper .page-body-wrapper .page-sidebar .sidebar-user h6{
 		color:#FFFFFF;
 	}

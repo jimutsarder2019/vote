@@ -21,12 +21,14 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-lg-12">
 					<div class="page-header-left">
 						<h3>Visitors IP Address</h3>
+						<?php if(0){ ?>
 						</br>
 						<div class="box-footer2">
 							<a href="<?php echo Url::to(['visitor/index?type=today']); ?>" class='btn btn-success'>Today (<?=@$today_count?>)</a>
 							<a href="<?php echo Url::to(['visitor/index?type=month']); ?>" class='btn btn-success'>This Month (<?=@$month_count?>)</a>
 							<a href="<?php echo Url::to(['visitor/index']); ?>" class='btn btn-success'>All (<?=@$all_count?>)</a>
 						</div>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
