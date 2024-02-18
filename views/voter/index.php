@@ -63,14 +63,14 @@ $this->params['breadcrumbs'][] = $this->title;
 										'label' => 'Call Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
 										'content' => function ($model) {
-											return ($model->call_done)?'<span style="color:green; font-weight:bold; font-size:16px">Yes</span>':'<a href="?r=voter/call-done&vid='.$model->id.'"><span style="color:red; font-weight:bold; font-size:16px"><i style="color:red" class="fa fa-phone"></i>Call</span></a>';
+											return ($model->call_done)?'<span style="color:green; font-weight:bold; font-size:16px">Yes</span>':'<a href="?r=voter/call-done&vid='.$model->id.'"><span style="color:red; font-weight:bold; font-size:16px"><i style="color:red" class="fa fa-phone"></i> Call</span></a>';
 										}
 									],
 									[
 										'label' => 'Visit Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
 										'content' => function ($model) {
-											return ($model->visit_done)?'<span style="color:green; font-weight:bold; font-size:16px">Yes</span>':'<a href="?r=voter/visit-done&vid='.$model->id.'"><span style="color:red; font-weight:bold; font-size:16px">Visit</span></a>';
+											return ($model->visit_done)?'<span style="color:green; font-weight:bold; font-size:16px">Yes</span>':'<a href="?r=voter/visit-done&vid='.$model->id.'"><span style="color:red; font-weight:bold; font-size:16px"><i style="color:red" class="fa fa-eye"></i>Visit</span></a>';
 										}
 									],
 									[
