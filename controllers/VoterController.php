@@ -114,6 +114,7 @@ class VoterController extends Controller
 		$model = $this->findModel($id);
         if (!empty($model)) {
 			$model->visit_done = 1;
+			$model->visit_done_date = date('Y-m-d');
 			if ($model->save(false)) {
 				return $this->redirect(['index']);
 			}
@@ -129,6 +130,7 @@ class VoterController extends Controller
 		$model = $this->findModel($id);
         if (!empty($model)) {
 			$model->call_done = 1;
+			$model->call_done_date = date('Y-m-d');
 			if ($model->save(false)) {
 				return $this->redirect(['index']);
 			}

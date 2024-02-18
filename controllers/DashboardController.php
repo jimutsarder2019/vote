@@ -87,7 +87,9 @@ class DashboardController extends CustomController
 		$routers = Yii::$app->db->createCommand( 'SELECT * FROM voter ORDER BY id desc' )->queryAll();
 		$users = Yii::$app->db->createCommand( 'SELECT * FROM user WHERE role > 1 ORDER BY id desc' )->queryAll();
 		$visit_done = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM voter WHERE visit_done = 1' )->queryScalar();
+		$visit_done_today = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM voter WHERE visit_done = 1 and visit_done_date="'.date('Y-m-d').'"' )->queryScalar();
 		$call_done = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM voter WHERE call_done = 1' )->queryScalar();
+		$call_done_today = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM voter WHERE call_done = 1 and call_done_date="'.date('Y-m-d').'"' )->queryScalar();
 		$visitor = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM visitor' )->queryScalar();
 		
 		
@@ -98,6 +100,8 @@ class DashboardController extends CustomController
 		'call_done' => $call_done,
 		'visit_done' => $visit_done,
 		'visitor' => $visitor,
+		'call_done_today' => $call_done_today,
+		'visit_done_today' => $visit_done_today,
 		]);
     }
 }
