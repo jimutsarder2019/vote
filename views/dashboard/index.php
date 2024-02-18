@@ -98,7 +98,7 @@ $baseUrl = Url::base();
 							</div>
 							<div class="media-body media-doller">
 								<span class="m-0">All Visitors</span>
-								<h3 class="mb-0"><span class="js-user-counter"><?=@$users_count?></span>
+								<h3 class="mb-0"><span class="js-user-counter2"><?=@$visitor?></span>
 								</h3>
 							</div>
 						</div>
