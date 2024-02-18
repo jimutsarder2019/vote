@@ -150,7 +150,7 @@ $baseUrl = Url::base();
 							</div>
 							<div class="media-body media-doller">
 								<span class="m-0">Today Visits</span>
-								<h3 class="mb-0"><span class="counter"><?=@$visit_done_date?></span>
+								<h3 class="mb-0"><span class="counter"><?=@$visit_done_today?></span>
 								</h3>
 							</div>
 						</div>
@@ -168,7 +168,7 @@ $baseUrl = Url::base();
 							</div>
 							<div class="media-body media-doller">
 								<span class="m-0">Today Call</span>
-								<h3 class="mb-0"><span class="counter"><?=@$call_done_date?></span>
+								<h3 class="mb-0"><span class="counter"><?=@$call_done_today?></span>
 								</h3>
 							</div>
 						</div>
