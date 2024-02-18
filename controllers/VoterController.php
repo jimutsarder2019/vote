@@ -39,14 +39,19 @@ class VoterController extends Controller
      */
     public function actionIndex()
     {
+		$page = 'voter';
 		$type = Yii::$app->getRequest()->getQueryParam('type');
 		$this->layout = 'frontend';
         $searchModel = new VoterSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
-
+        if($type){
+			$page = $type;
+		}
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'page' => $page,
+			''
         ]);
     }
 
