@@ -108,7 +108,7 @@ class VoterController extends Controller
 	
 	public function actionVisitDone()
     {
-        $model = HomepagePopup::find()->all();
+		$model = $this->findModel($id);
         if (!empty($model)) {
             $acitve_count = 0;
             $previous_activated = 0;
