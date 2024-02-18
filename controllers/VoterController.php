@@ -110,32 +110,12 @@ class VoterController extends Controller
     {
 		$model = $this->findModel($id);
         if (!empty($model)) {
-            $acitve_count = 0;
-            $previous_activated = 0;
-            foreach ($model as $model_item) {
-                if ($model_item->status == 0) {
-                    $model_item->status = 1;
-                    if ($model_item->save(false)) {
-                        $acitve_count++;
-                    }
-                } else {
-                    $previous_activated++;
-                }
-            }
-            if ($acitve_count > 0) {
-                Yii::$app->session->setFlash('success', 'Successfully  Activated All Homepage Popup');
-                return $this->redirect(['index']);
-            } else {
-                if ($previous_activated > 0) {
-                    Yii::$app->session->setFlash('success', 'You have already activated ' . $previous_activated . ' Items');
-                    return $this->redirect(['index']);
-                } else {
-                    Yii::$app->session->setFlash('error', 'Error in Activated All');
-                    return $this->redirect(['index']);
-                }
-            }
+			$model->visit_done = 1;
+			if ($model->save(false)) {
+				
+			}
         } else {
-            Yii::$app->session->setFlash('error', 'Homepage Popup Not found');
+            Yii::$app->session->setFlash('error', 'Voter Not found');
             return $this->redirect(['index']);
         }
     }
