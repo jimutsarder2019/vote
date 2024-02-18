@@ -84,9 +84,10 @@ class DashboardController extends CustomController
     public function actionIndex()
     {
 		$this->layout = 'frontend';
-		$routers = Yii::$app->db->createCommand( 'SELECT * FROM router ORDER BY id desc' )->queryAll();
+		$routers = Yii::$app->db->createCommand( 'SELECT * FROM voter ORDER BY id desc' )->queryAll();
 		$users = Yii::$app->db->createCommand( 'SELECT * FROM user WHERE role > 1 ORDER BY id desc' )->queryAll();
-		$active_users = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM user WHERE status = 1 and role > 1' )->queryScalar();
+		$visit_done = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM voter WHERE visit_done = 1' )->queryScalar();
+		$call_done = Yii::$app->db->createCommand( 'SELECT COUNT(*) FROM voter WHERE call_done = 1' )->queryScalar();
 		
 		
         return $this->render('index', ['router_data'=>$routers, 
