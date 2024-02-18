@@ -63,14 +63,14 @@ $this->params['breadcrumbs'][] = $this->title;
 										'label' => 'Call Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
 										'content' => function ($model) {
-											return ($model->call_done)?'Yes':'<a href="javascript:void(0)">Call</a>';
+											return ($model->call_done)?'Yes':'<a href="?r=voter/index&vid='.$model->id.'">Call</a>';
 										}
 									],
 									[
 										'label' => 'Visit Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
 										'content' => function ($model) {
-											return ($model->visit_done)?'Yes':'<a href="javascript:void(0)">Visit</a>';
+											return ($model->visit_done)?'Yes':'<a href="?r=voter/visit&vid='.$model->id.'">Visit</a>';
 										}
 									],
 									[

@@ -108,6 +108,7 @@ class VoterController extends Controller
 	
 	public function actionVisitDone()
     {
+		$id = Yii::$app->getRequest()->getQueryParam('vid');
 		$model = $this->findModel($id);
         if (!empty($model)) {
 			$model->visit_done = 1;
