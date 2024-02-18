@@ -112,7 +112,7 @@ class VoterController extends Controller
         if (!empty($model)) {
 			$model->visit_done = 1;
 			if ($model->save(false)) {
-				
+				return $this->redirect(['index']);
 			}
         } else {
             Yii::$app->session->setFlash('error', 'Voter Not found');
