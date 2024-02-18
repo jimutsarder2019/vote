@@ -32,7 +32,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'license')->textInput(['maxlength' => true]) ?>
+	<?= $form->field($model, 'license')->dropDownList(['thana'=>'Thana','district'=>'District']); ?>
 
     <?= $form->field($model, 'date')->hiddenInput(['maxlength' => true, 'value'=>date('Y-m-d')])->label(false) ?>
 
