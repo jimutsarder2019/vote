@@ -51,8 +51,20 @@ $this->params['breadcrumbs'][] = $this->title;
 									'name',
 									'ispab_member',
 									'voter_no',
-									'call_done',
-									'visit_done',
+									[
+										'label' => 'Call Done',
+										'headerOptions' => ['style' => 'color:#ff4c3b'],
+										'content' => function ($model) {
+											return ($model->call_done)?'Yes':'Call';
+										}
+									],
+									[
+										'label' => 'Visit Done',
+										'headerOptions' => ['style' => 'color:#ff4c3b'],
+										'content' => function ($model) {
+											return ($model->visit_done)?'Yes':'Visit';
+										}
+									],
 									//'mobile1',
 									//'mobile2',
 									//'email:email',
