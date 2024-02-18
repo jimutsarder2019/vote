@@ -116,7 +116,7 @@ $baseUrl = Url::base();
 							</div>
 							<div class="media-body media-doller">
 								<span class="m-0">Visit Done</span>
-								<h3 class="mb-0"><span class="counter"><?=@$router_count?></span>
+								<h3 class="mb-0"><span class="counter"><?=@$visit_done?></span>
 								</h3>
 							</div>
 						</div>
@@ -131,8 +131,10 @@ $baseUrl = Url::base();
 								<div class="align-self-center text-center"><i
 										class="fa fa-users"></i></div>
 							</div>
-							<div class="media-body media-doller"><span class="m-0">Call Done</span>
-								<p class="mb-0"><span class="counter"><?=@$uptime?></span> Days</p>
+							<div class="media-body media-doller">
+								<span class="m-0">Call Done</span>
+								<h3 class="mb-0"><span class="counter"><?=@$call_done?></span>
+								</h3>
 							</div>
 						</div>
 					</div>
