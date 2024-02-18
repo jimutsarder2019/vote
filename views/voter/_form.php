@@ -16,6 +16,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+	<?= $form->field($model, 'license')->dropDownList(['thana'=>'Thana','district'=>'District']); ?>
+
     <?= $form->field($model, 'ispab_member')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'voter_no')->textInput(['maxlength' => true]) ?>
@@ -31,8 +33,6 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'district')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
-
-	<?= $form->field($model, 'license')->dropDownList(['thana'=>'Thana','district'=>'District']); ?>
 
     <?= $form->field($model, 'date')->hiddenInput(['maxlength' => true, 'value'=>date('Y-m-d')])->label(false) ?>
 
