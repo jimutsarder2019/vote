@@ -94,6 +94,8 @@ class DashboardController extends CustomController
 		'user_data'=>$users,
 		'users_count'=>0, 
 		'router_count'=>count($routers),
+		'call_done' => $call_done,
+		'visit_done' => $visit_done,
 		]);
     }
 }
