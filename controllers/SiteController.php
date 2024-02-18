@@ -78,6 +78,7 @@ class SiteController extends CustomController
      */
     public function actionIndex()
     {
+		$this->layout = 'empty';
 		return $this->render('index');
         //return $this->redirect(['login']);
     }
