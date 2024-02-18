@@ -41,7 +41,7 @@ class VoterController extends Controller
     {
 		$type = Yii::$app->getRequest()->getQueryParam('type');
 		$this->layout = 'frontend';
-        $searchModel = new VoterSearch($type);
+        $searchModel = new VoterSearch();
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [

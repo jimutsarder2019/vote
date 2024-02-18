@@ -40,7 +40,18 @@ class VoterSearch extends Voter
      */
     public function search($params)
     {
+		$field = '';
+		if(isset($params['type'])){
+			if($params['type'] == 'call'){
+				$field = 'call_done';
+			}else if($params['type'] == 'visit'){
+				$field = 'visit_done';
+			}
+		}
         $query = Voter::find();
+		if($field){
+		    $query->where([$field => 1]);
+		}
 
         // add conditions that should always apply here
 
