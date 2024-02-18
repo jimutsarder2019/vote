@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use app\models\Voter;
 use app\models\VoterSearch;
 use yii\web\Controller;
