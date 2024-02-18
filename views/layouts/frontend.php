@@ -119,8 +119,18 @@ $isAdmin = ApplicationHelper::isAdmin();
 	  display: table;
 	}
 	
-	.page-wrapper .page-body-wrapper .sidebar{
+	.page-wrapper .page-body-wrapper .sidebar, .page-wrapper .page-body-wrapper .page-sidebar .main-header-left{
 		background-color:#ff8100;
+		color: #FFFFFF;
+	}
+	
+	.page-wrapper .page-body-wrapper .page-sidebar .main-header-left a{
+		background-color:#ff8100;
+		color: #FFFFFF;
+	}
+	
+	.page-wrapper .page-body-wrapper .page-sidebar .sidebar-user h6{
+		color:#FFFFFF;
 	}
 	</style>
 	
