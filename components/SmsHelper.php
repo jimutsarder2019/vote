@@ -15,9 +15,9 @@ class SmsHelper
     {
         $sms_api_model = SmsApi::findOne(['status' => 1]);
         if (!empty($sms_api_model)) {
-            $api_end_point = $sms_api_model->api_end_point;
-            $api_key = $sms_api_model->api_key;
-            $api_secret = $sms_api_model->api_secret;
+            $api_end_point = 'https://portal.adnsms.com/api/v1/secure/send-sms';
+            $api_key = 'KEY-t5anxt73vd8gxn2f07jbkghvmyf6qizw';
+            $api_secret = 'aqDDnNkK0O5USOnK';
         } else {
             $api_end_point = '';
             $api_key = '';
