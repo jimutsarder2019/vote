@@ -72,8 +72,8 @@ class VoterSearch extends Voter
             ->andFilterWhere(['like', 'district', $this->district])
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'license', $this->license])
-            ->andFilterWhere(['like', 'call_done', $this->call_done])
-            ->andFilterWhere(['like', 'visit_done', $this->visit_done])
+            ->andFilterWhere(['=', 'call_done', $this->call_done])
+            ->andFilterWhere(['=', 'visit_done', $this->visit_done])
             ->andFilterWhere(['like', 'date', $this->date]);
 
         return $dataProvider;
