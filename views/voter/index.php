@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
 										'label' => 'Visit Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
 										'content' => function ($model) {
-											return ($model->visit_done)?'Yes':'Visit';
+											return ($model->visit_done)?'Yes':'<a href="javascript:void(0)">Visit</a>';
 										}
 									],
 									//'mobile1',
