@@ -17,7 +17,7 @@ class VoterSearch extends Voter
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'call_done', 'visit_done'], 'integer'],
             [['company', 'name', 'ispab_member', 'voter_no', 'mobile1', 'mobile2', 'email', 'thana', 'district', 'address', 'license', 'date'], 'safe'],
         ];
     }
@@ -72,6 +72,8 @@ class VoterSearch extends Voter
             ->andFilterWhere(['like', 'district', $this->district])
             ->andFilterWhere(['like', 'address', $this->address])
             ->andFilterWhere(['like', 'license', $this->license])
+            ->andFilterWhere(['like', 'call_done', $this->call_done])
+            ->andFilterWhere(['like', 'visit_done', $this->visit_done])
             ->andFilterWhere(['like', 'date', $this->date]);
 
         return $dataProvider;

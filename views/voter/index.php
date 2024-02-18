@@ -51,6 +51,8 @@ $this->params['breadcrumbs'][] = $this->title;
 									'name',
 									'ispab_member',
 									'voter_no',
+									'call_done',
+									'visit_done',
 									//'mobile1',
 									//'mobile2',
 									//'email:email',
