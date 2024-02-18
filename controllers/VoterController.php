@@ -148,8 +148,10 @@ class VoterController extends Controller
 			$model->visit_done = 1;
 			$model->visit_done_date = date('Y-m-d');
 			if ($model->save(false)) {
-				if(SmsHelper::sendMessage($message, $mode->mobile)){
-				    return $this->redirect(['index']);
+				if($model->mobile1){
+					if(SmsHelper::sendMessage($message, $model->mobile1)){
+						return $this->redirect(['index']);
+					}
 				}
 			}
         } else {
@@ -162,11 +164,16 @@ class VoterController extends Controller
     {
 		$id = Yii::$app->getRequest()->getQueryParam('vid');
 		$model = $this->findModel($id);
+		$message = 'ISPAB-2024: Call done';
         if (!empty($model)) {
 			$model->call_done = 1;
 			$model->call_done_date = date('Y-m-d');
 			if ($model->save(false)) {
-				return $this->redirect(['index']);
+				if($model->mobile1){
+					if(SmsHelper::sendMessage($message, $model->mobile1)){
+						return $this->redirect(['index']);
+					}
+				}
 			}
         } else {
             Yii::$app->session->setFlash('error', 'Voter Not found');
