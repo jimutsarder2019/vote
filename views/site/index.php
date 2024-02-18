@@ -136,7 +136,7 @@ $baseUrl = Url::base();
               </div>
 
               <div class="col-md-4 text-right">
-                <img class="voter-img justify-content-right" src="assets/medias/voter.jpg" height="auto">
+                <img class="voter-img justify-content-right" src="<?=$baseUrl?>/custom/medias/voter.jpg" height="auto">
               </div>
 
             </div>
@@ -172,7 +172,7 @@ $baseUrl = Url::base();
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-body">
-                <img src="assets/medias/under-construction.jpg" width="100%">
+                <img src="<?=$baseUrl?>/custom/medias/under-construction.jpg" width="100%">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
