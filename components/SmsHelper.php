@@ -13,30 +13,15 @@ class SmsHelper
 {
     public static function sendMessage($message, $phone)
     {
-        $sms_api_model = SmsApi::findOne(['status' => 1]);
-        if (!empty($sms_api_model)) {
-            $api_end_point = 'https://portal.adnsms.com/api/v1/secure/send-sms';
-            $api_key = 'KEY-t5anxt73vd8gxn2f07jbkghvmyf6qizw';
-            $api_secret = 'aqDDnNkK0O5USOnK';
-        } else {
-            $api_end_point = '';
-            $api_key = '';
-            $api_secret = '';
-        }
-        /*$otp_end_point = Yii::$app->params['otpEndPoint'];
-        $otp_api_key = Yii::$app->params['otpApiKey'];
-        $otp_api_secret = Yii::$app->params['otpApiSecret'];*/
+        $api_end_point = 'https://portal.adnsms.com/api/v1/secure/send-sms';
+        $api_key = 'KEY-t5anxt73vd8gxn2f07jbkghvmyf6qizw';
+        $api_secret = 'aqDDnNkK0O5USOnK';
 
         $otp_end_point = $api_end_point;
         $otp_api_key = $api_key;
         $otp_api_secret = $api_secret;
 
         $phone = trim($phone, '+');
-        //echo$phone;
-        // set 88 as prefix if not mentioned
-        /*if(substr($phone, 0, 2) !== '88'){
-            $phone = '88'.$phone;
-        }*/
         $esms_endpoint = $otp_end_point;
         $api_key = $otp_api_key;
         $api_secret = $otp_api_secret;
