@@ -41,6 +41,7 @@ class Voter extends \yii\db\ActiveRecord
             [['company', 'name', 'address', 'license'], 'string', 'max' => 100],
             [['ispab_member', 'voter_no', 'mobile1', 'mobile2', 'email', 'thana', 'district'], 'string', 'max' => 50],
             [['date'], 'string', 'max' => 20],
+			[['call_done', 'visit_done'], 'integer'],
         ];
     }
 
@@ -63,6 +64,8 @@ class Voter extends \yii\db\ActiveRecord
             'address' => 'Address',
             'license' => 'License',
             'date' => 'Date',
+            'call_done' => 'Call Done',
+            'visit_done' => 'Visit Done',
         ];
     }
 }
