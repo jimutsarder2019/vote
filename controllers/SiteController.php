@@ -26,7 +26,7 @@ class SiteController extends CustomController
 				'class' => 'yii\filters\AccessControl',
 				'rules' => [
 					[
-						'actions' => ['login', 'error'],
+						'actions' => ['index', 'login', 'error'],
 						'allow' => true,
 					],
 					[
@@ -78,7 +78,8 @@ class SiteController extends CustomController
      */
     public function actionIndex()
     {
-        return $this->redirect(['login']);
+		return $this->render('index');
+        //return $this->redirect(['login']);
     }
 
     /**
