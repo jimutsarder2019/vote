@@ -44,13 +44,21 @@ $this->params['breadcrumbs'][] = $this->title;
 								'dataProvider' => $dataProvider,
 								'filterModel' => $searchModel,
 								'columns' => [
-									['class' => 'yii\grid\SerialColumn'],
+									//['class' => 'yii\grid\SerialColumn'],
 
-									'id',
+									//'id',
 									'company',
 									'name',
 									'ispab_member',
 									'voter_no',
+									'mobile1',
+									//'mobile2',
+									'email:email',
+									//'thana',
+									'district',
+									//'address',
+									//'license',
+									//'date',
 									[
 										'label' => 'Call Done',
 										'headerOptions' => ['style' => 'color:#ff4c3b'],
@@ -65,14 +73,6 @@ $this->params['breadcrumbs'][] = $this->title;
 											return ($model->visit_done)?'Yes':'<a href="javascript:void(0)">Visit</a>';
 										}
 									],
-									//'mobile1',
-									//'mobile2',
-									//'email:email',
-									//'thana',
-									//'district',
-									//'address',
-									//'license',
-									//'date',
 									[
 										'class' => ActionColumn::className(),
 										'urlCreator' => function ($action, Voter $model, $key, $index, $column) {
