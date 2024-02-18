@@ -241,13 +241,13 @@ $isAdmin = ApplicationHelper::isAdmin();
 							</a>
 						</li>
 						<li>
-							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=voter/index&type=visit">
 								<i data-feather="users"></i>
                                 <span>Visit Done</span>
 							</a>
 						</li>
 						<li>
-							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=login-history/index">
+							<a class="sidebar-header" href="<?=$baseUrl ?>/?r=voter/index&type=call">
 								<i data-feather="users"></i>
                                 <span>Call Done</span>
 							</a>
