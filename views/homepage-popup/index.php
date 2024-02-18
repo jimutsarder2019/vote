@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-lg-12">
 					<div class="page-header-left">
 						    <h3><?= Html::encode($this->title) ?></h3>
+							</br>
 						
 						<div class="box-footer2">
 							<?= Html::a('Create Homepage Popup', ['create'], ['class' => 'btn btn-success']) ?>

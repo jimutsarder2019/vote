@@ -19,12 +19,6 @@ use yii\widgets\ActiveForm;
         <div class="col-md-6">
             <?= $form->field($model,'status')->dropDownList(['1'=>'Active','0'=>'Deactive']) ?>
         </div>
-        <div class="col-md-6">
-            <div class="form-group">
-                <label class="control-label">Expire Date</label>
-                
-            </div>
-        </div>
     </div>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
