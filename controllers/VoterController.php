@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use app\components\SmsHelper;
 
 /**
  * VoterController implements the CRUD actions for Voter model.
@@ -142,11 +143,14 @@ class VoterController extends Controller
     {
 		$id = Yii::$app->getRequest()->getQueryParam('vid');
 		$model = $this->findModel($id);
+		$message = 'ISPAB-2024: Visit done';
         if (!empty($model)) {
 			$model->visit_done = 1;
 			$model->visit_done_date = date('Y-m-d');
 			if ($model->save(false)) {
-				return $this->redirect(['index']);
+				if(SmsHelper::sendMessage($message, $mode->mobile)){
+				    return $this->redirect(['index']);
+				}
 			}
         } else {
             Yii::$app->session->setFlash('error', 'Voter Not found');
