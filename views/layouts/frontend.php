@@ -129,6 +129,12 @@ $isAdmin = ApplicationHelper::isAdmin();
 		color: #FFFFFF;
 	}
 	
+	.btn-success{
+		background-color:#ff8100 !important;
+		border: 1px solid #ff8100 !important;
+		color: #FFFFFF;
+	}
+	
 	* a {
 		color: #ff8100;
 	}
