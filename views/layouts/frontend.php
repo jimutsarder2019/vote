@@ -118,6 +118,10 @@ $isAdmin = ApplicationHelper::isAdmin();
 	  clear: both;
 	  display: table;
 	}
+	
+	.page-wrapper .page-body-wrapper .sidebar{
+		background-color:#ff8100;
+	}
 	</style>
 	
 	<script>
