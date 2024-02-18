@@ -121,6 +121,21 @@ class VoterController extends Controller
             return $this->redirect(['index']);
         }
     }
+	
+	public function actionCallDone()
+    {
+		$id = Yii::$app->getRequest()->getQueryParam('vid');
+		$model = $this->findModel($id);
+        if (!empty($model)) {
+			$model->call_done = 1;
+			if ($model->save(false)) {
+				return $this->redirect(['index']);
+			}
+        } else {
+            Yii::$app->session->setFlash('error', 'Voter Not found');
+            return $this->redirect(['index']);
+        }
+    }
 
     /**
      * Deletes an existing Voter model.
