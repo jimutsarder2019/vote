@@ -30,14 +30,38 @@ class ApiController extends CustomController
 		$thana = Yii::$app->request->post('thana');
 		$district = Yii::$app->request->post('district');
 		$division = Yii::$app->request->post('division');
+		$where = [];
+		if($company){
+			$where [] "company like '%$company%'";
+		}
 		
-		$sql = 'SELECT * FROM voter where 
+		if($voter){
+			$where [] "voter like '%$company%'";
+		}
+		
+		if($thana){
+			$where [] "voter like '%$thana%'";
+		}
+		
+		if($district){
+			$where [] "voter like '%$district%'";
+		}
+		
+		if($division){
+			$where [] "voter like '%$division%'";
+		}
+		
+		echo implode("and",$where);
+		
+		die;
+		
+		$sql = "SELECT * FROM voter where 
 		company like '%$company%'
 		and name like '%$voter%'
 		and thana like '%$thana%'
 		and district like '%$district%'
 		and division like '%$division%'
-		';
+		";
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
     }
