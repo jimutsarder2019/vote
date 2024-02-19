@@ -37,11 +37,11 @@ $this->params['breadcrumbs'][] = $this->title;
 					<div class="card-body">
 						<div class="user-status table-responsive2 latest-order-table">
 							<div class="row">
-							<div class="col-md-2"><input placeholder="Company Name" class="form-control"></div>
-							<div class="col-md-2"><input placeholder="Voter Name" class="form-control"></div>
-							<div class="col-md-2"><input placeholder="Thana"  class="form-control"></div>
-							<div class="col-md-2"><input placeholder="District"  class="form-control"></div>
-							<div class="col-md-2"><input placeholder="Division"  class="form-control"></div>
+							<div class="col-md-2"><input placeholder="Company Name" class="js_company form-control"></div>
+							<div class="col-md-2"><input placeholder="Voter Name" class="js_voter form-control"></div>
+							<div class="col-md-2"><input placeholder="Thana"  class="js_thana form-control"></div>
+							<div class="col-md-2"><input placeholder="District"  class="js_district form-control"></div>
+							<div class="col-md-2"><input placeholder="Division"  class="js_division form-control"></div>
 							<div class="col-md-2"><button class="btn btn-success js_voter_search">Download</button></div>
 							</div>
 						</div>
