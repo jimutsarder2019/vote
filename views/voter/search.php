@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var app\models\VoterSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Voters';
+$this->title = 'ISPAB Voter Search';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
