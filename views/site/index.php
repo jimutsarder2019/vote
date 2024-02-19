@@ -72,7 +72,7 @@ $baseUrl = Url::base();
                         <input type="name" class="form-control" id="name" aria-describedby="typeName">
                       </div>
                     <div class="col-auto">
-                      <button type="button" class="btn btn-primary mt-3 px-5" data-bs-toggle="modal" data-bs-target="#exampleModal">Search</button>
+                      <button type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
                     </div>
                   </div>
                 </form>
