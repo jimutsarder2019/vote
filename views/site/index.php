@@ -120,13 +120,13 @@ $baseUrl = Url::base();
              <div class="mb-3 row">
               <div class="col-md-8 row">
                 <label class="col-sm-4 pt-3"><strong>Company Name: </strong></label>
-                <div class="col-sm-8 pt-3"><label class="company_name">ABC Company Limited</label></div>
+                <div class="col-sm-8 pt-3"><label class="company_name"></label></div>
 
                 <label class="col-sm-4 pt-3"><strong>Voter Name: </strong></label>
-                <div class="col-sm-8 pt-3"><label class="voter_name">Md. Ahasan Habib</label></div>
+                <div class="col-sm-8 pt-3"><label class="voter_name"></label></div>
 
                 <label class="col-sm-4 pt-3"><strong>Voter No: </strong></label>
-                <div class="col-sm-8 pt-3"><label class="voter_no">547EDFD156</label></div>
+                <div class="col-sm-8 pt-3"><label class="voter_no"></label></div>
 
                 <label class="col-sm-4 pt-3"><strong>Membership Level: </strong></label>
                 <div class="col-sm-8 pt-3"><label class="membership"></label></div>
