@@ -22,9 +22,9 @@ class S3bucketHelper
     public static function upload_aws_s3_bucket($folder_name, $image_instance)
     {
         $current_date = new \DateTime();
-        $bucketName = Yii::$app->params['s3BucketName'];
-        $IAM_KEY = Yii::$app->params['IAM_KEY'];
-        $IAM_SECRET = Yii::$app->params['IAM_SECRET'];
+        $bucketName = 'travels-bucket';
+        $IAM_KEY = 'AKIAIEIE6BO6ILNJUFKA';
+        $IAM_SECRET = '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';
 
         $keyName = $folder_name . '/' . $current_date->getTimestamp() . '.' . $image_instance->extension;
         try {
