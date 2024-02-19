@@ -24,11 +24,11 @@ $this->params['breadcrumbs'][] = $this->title;
 						<h3><?= Html::encode($this->title) ?></h3>
 						</br>
 						<div class="row">
-						<div class="col-md-2"><input class="form-control"></div>
-						<div class="col-md-2"><input class="form-control"></div>
-						<div class="col-md-2"><input class="form-control"></div>
-						<div class="col-md-2"><input class="form-control"></div>
-						<div class="col-md-2"><input class="form-control"></div>
+						<div class="col-md-2"><input placeholder="Company Name" class="form-control"></div>
+						<div class="col-md-2"><input placeholder="Voter Name" class="form-control"></div>
+						<div class="col-md-2"><input placeholder="Thana"  class="form-control"></div>
+						<div class="col-md-2"><input placeholder="District"  class="form-control"></div>
+						<div class="col-md-2"><input placeholder="Division"  class="form-control"></div>
 						</div>
 						
 					
