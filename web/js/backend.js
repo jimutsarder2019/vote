@@ -410,13 +410,7 @@ function generateVoterData(type=false)
 							alert('You have already a pending/processing request. So please try again later for further request.');
 						}
 					}else{
-						if(type == 'csv'){
-							generateReport(response.data);
-						}else if(type == 'xlsx'){
-							excelReport(response.data);
-						}else if(type == 'pdf'){
-							pdfPrint(response.data);
-						}
+						pdfPrintVote(response.data);
 					}
 				}else{
 					/*if(response.data.length === 10000){
@@ -584,6 +578,72 @@ function generateReport(data){
 	csv = [];
 	csvRow = [];
 	csvHeader = [];  
+}
+
+
+function pdfPrintVote(pdfData) {
+	
+	let tr = '';
+	$.each(pdfData, function( key, value ) {
+		tr += '<tr>'+
+					'<td class="digits">'+value['datetime']+'</td>'+
+					'<td class="digits">'+value['host']+'</td>'+
+					'<td class="digits">'+value['user']+'</td>'+
+					'<td class="digits">'+value['protocol']+'</td>'+
+					'<td class="digits">'+value['mac']+'</td>'+
+					'<td class="digits">'+value['src_ip']+'</td>'+
+					'<td class="digits">'+value['src_port']+'</td>'+
+					'<td class="digits">'+value['destination_ip']+'</td>'+
+					'<td class="digits">'+value['destination_port']+'</td>'+
+					'<td class="digits">'+value['nat_ip']+'</td>'+
+					'<td class="digits">'+value['nat_port']+'</td>'+
+				'</tr>';
+	});
+	
+	var pdfBodyContent = '<style type="text/css" media="print">@page { size: landscape; }</style>'+
+								'<table class="table table-bordernone">'+
+									'<thead>'+
+										'<tr>'+
+											'<th scope="col">DateTime</th>'+
+											'<th scope="col">Router IP</th>'+
+											'<th scope="col">User</th>'+
+											'<th scope="col">Protocol</th>'+
+											'<th scope="col">Mac</th>'+
+											'<th scope="col">Src IP</th>'+
+											'<th scope="col">Port</th>'+
+											'<th scope="col">Dst IP</th>'+
+											'<th scope="col">Port</th>'+
+											'<th scope="col">NAT IP</th>'+
+											'<th scope="col">Port</th>'+
+										'</tr>'+
+									'</thead>'+
+									'<tbody class="data-render2">'+tr+'</tbody>'+
+								'</table>';
+	
+	
+				 //document.getElementById("table-data").innerHTML = pdfBodyContent;
+				
+	var date_start = $('.js_date_start').val();
+	var date_end = $('.js_date_end').val();
+	
+	//var divContents = document.getElementById("table-data").innerHTML;
+	var a = window.open('', '');
+	a.document.write('<html><style>table{border-collapse: collapse;} table, td, th{border:1px solid #000000 !important; padding:2px !important;}</style>');
+	a.document.write('<body ><h1>'+company_name+' Log Report</h1><br>');
+	a.document.write('<p>License Number: '+license_number+'</p>');
+	a.document.write('<p>Address: '+company_address+'</p>');
+	a.document.write('<p>Phone Number: '+company_phone+'</p>');
+	if(date_start && date_end){
+	    a.document.write('<p>Log Report: '+date_start+' to '+date_end+'</p>');
+	}else{
+		a.document.write('<p>Log Report:</p>');
+	}
+	a.document.write('<br>');
+	a.document.write(pdfBodyContent);
+	a.document.write('</body></html>');
+	a.document.close();
+	$('.js-report-loading').html('');
+	a.print();
 }
 
 
