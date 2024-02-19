@@ -362,9 +362,9 @@ function generateVoterData(type=false)
 {
 	var company = $('.js_company').val();
 	var voter = $('.js_voter').val();
-	var company = $('.js_company').val();
-	var company = $('.js_company').val();
-	var company = $('.js_company').val();
+	var thana = $('.js_thana').val();
+	var district = $('.js_district').val();
+	var division = $('.js_division').val();
 	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
 	if(type){
 	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
