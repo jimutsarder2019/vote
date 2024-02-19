@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'image_url')->fileInput(['id' => 'homepage_popup_image', 'class' => 'form-control', 'accept' => "image/jpg,image/png,image/jpeg,image/gif"]); ?>
+    <?= $form->field($model, 'file1')->fileInput(['id' => 'homepage_popup_image', 'class' => 'form-control', 'accept' => "image/jpg,image/png,image/jpeg,image/gif"]); ?>
 
     <?= $form->field($model, 'image_link')->textInput() ?>
     <div class="row">
