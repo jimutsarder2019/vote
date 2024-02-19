@@ -365,7 +365,7 @@ function generateVoterData(type=false)
 	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
 	}
 	$.ajax({  
-		url: base_url+'/?r=voter/get',
+		url: base_url+'/?r=api/get',
 		type: 'POST',
         dataType: 'JSON',
         data:{page:'home'},		

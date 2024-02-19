@@ -192,7 +192,7 @@ class VoterController extends Controller
     {
 		$sql = 'SELECT * FROM voter';
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
-        die(json_encode(['voters'=>$voters]);
+        die(json_encode(['voters'=>$voters]));
     }
 
     /**

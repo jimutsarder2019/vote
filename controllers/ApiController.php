@@ -23,6 +23,14 @@ class ApiController extends CustomController
 		return parent::beforeAction($action); 
 	}
 	
+	public function actionGet()
+    {
+		$sql = 'SELECT * FROM voter';
+		$voters = Yii::$app->db->createCommand($sql)->queryAll();
+        die(json_encode(['voters'=>$voters]));
+    }
+
+	
 	public function actionUser()
     {
 		$routers = Yii::$app->db->createCommand( 'SELECT * FROM router ORDER BY id desc' )->queryAll();
