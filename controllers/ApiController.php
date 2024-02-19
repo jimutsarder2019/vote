@@ -26,10 +26,10 @@ class ApiController extends CustomController
 	public function actionGet()
     {
 		$company = Yii::$app->request->post('company');
-		$company = Yii::$app->request->post('company');
-		$company = Yii::$app->request->post('company');
-		$company = Yii::$app->request->post('company');
-		$company = Yii::$app->request->post('company');
+		$voter = Yii::$app->request->post('voter');
+		$thana = Yii::$app->request->post('thana');
+		$district = Yii::$app->request->post('district');
+		$division = Yii::$app->request->post('division');
 		
 		$sql = 'SELECT * FROM voter';
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
