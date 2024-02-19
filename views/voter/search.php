@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						<div class="col-md-2"><input placeholder="Thana"  class="form-control"></div>
 						<div class="col-md-2"><input placeholder="District"  class="form-control"></div>
 						<div class="col-md-2"><input placeholder="Division"  class="form-control"></div>
-						<div class="col-md-2"><button class="btn btn-success">Download</button></div>
+						<div class="col-md-2"><button class="btn btn-success js_voter_search">Download</button></div>
 						</div>
 						
 					
