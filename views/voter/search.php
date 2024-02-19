@@ -19,16 +19,16 @@ $this->params['breadcrumbs'][] = $this->title;
 	<div class="container-fluid">
 		<div class="page-header">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-lg-12">
 					<div class="page-header-left">
 						<h3><?= Html::encode($this->title) ?></h3>
 						</br>
 						<div class="row">
 						<div class="col-md-2"><input class="form-control"></div>
-						<div class="col-md-2"><input></div>
-						<div class="col-md-2"><input></div>
-						<div class="col-md-2"><input></div>
-						<div class="col-md-2"><input></div>
+						<div class="col-md-2"><input class="form-control"></div>
+						<div class="col-md-2"><input class="form-control"></div>
+						<div class="col-md-2"><input class="form-control"></div>
+						<div class="col-md-2"><input class="form-control"></div>
 						</div>
 						
 					
