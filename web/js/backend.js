@@ -370,10 +370,9 @@ function generateVoterData(type=false)
         dataType: 'JSON',
         data:{page:'home'},		
 		success: function(response) {   
-            console.log(response.data.length);
-			if(response.data && response.data.length > 0){
+			if(response.voters && response.voters.length > 0){
 				let tr = '';
-				$.each( response.data, function( key, value ) {
+				$.each( response.voters, function( key, value ) {
 					if(value['status']){
 						tr += '<tr>'+
 									'<td class="digits">'+value['datetime']+'</td>'+
@@ -400,23 +399,7 @@ function generateVoterData(type=false)
 					}
 				}
 				
-				if((type == 'csv') || (type == 'xlsx') || (type == 'pdf')){
-					if(response.report_status || (response.data.length > 3000)){
-						$('.js-report-loading').html('');
-						
-						if(response.process == 'yes'){
-						   alert('Your report generate data limitation have already exceed. So, Need some time to generate report. You will get it later in download report page.');
-						}else{
-							alert('You have already a pending/processing request. So please try again later for further request.');
-						}
-					}else{
-						pdfPrintVote(response.data);
-					}
-				}else{
-					/*if(response.data.length === 10000){
-						alert('Your searching data limitation have already exceed. So, Please add any one filtering option (Mac, Src IP, User, NAT, DST IP).');
-					}*/
-				}
+				pdfPrintVote(response.voters);
 			}else{
 				alert('No data found!');
                 $('.data-render').html('<tr><td style="color:#FF0000">No data found!</td></tr>');
