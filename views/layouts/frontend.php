@@ -285,7 +285,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                         </li>
 						
 						<li>
-                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=router/index">
+                            <a class="sidebar-header" href="<?=$baseUrl ?>/?r=voter/search">
                                 <i data-feather="search"></i>
                                 <span>Search with download </span>
                             </a>
