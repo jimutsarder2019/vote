@@ -142,11 +142,6 @@ $(document).ready(function(){
 		reportType = 'pdf';
 		generateVoterData('pdf');
 	});
-	
-	$('.js_voter_details').click(function(){
-		getVoterDetails();
-		//exampleModal
-	});
 });
 
 
@@ -363,30 +358,6 @@ function getPostParams()
 	return {page_name:page_name, report_type:reportType, offset:offset, limit:limit, search:search_value, from_date:date_start, to_date:date_end, from_hours:from_hours, from_mins:from_mins, to_hours:to_hours, to_mins:to_mins, router:router, user:user, mac:mac, src_ip:src_ip, dst_ip:dst_ip, nat_ip:nat_ip, src_port:src_port, dst_port:dst_port, nat_port:nat_port};
 }
 //exampleModal
-function getVoterDetails()
-{
-	var search = $('.js_search').val();
-	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
-	if(type){
-	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
-	}
-	$.ajax({  
-		url: base_url+'/?r=api/vote',
-		type: 'POST',
-        dataType: 'JSON',
-        data:{
-			search:search
-		},		
-		success: function(response) {   
-			if(response.voters && response.voters.length > 0){
-				pdfPrintVote(response.voters);
-			}else{
-				alert('No data found!');
-			}				
-		}  
-	});  
-	
-}
 
 
 function generateVoterData(type=false)

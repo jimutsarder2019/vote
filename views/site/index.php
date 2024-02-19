@@ -69,7 +69,7 @@ $baseUrl = Url::base();
                   <div class="row g-3 align-items-center">
                       <div class="mb-3 col-auto">
                         <label for="name" class="form-label"><strong>Type</strong> Company Name / Owner's Name / Mobile Number / Email / ISPAB Member ID</label>
-                        <input type="name" class="form-control" id="name" aria-describedby="typeName">
+                        <input type="name" class="form-control js_search" id="name" aria-describedby="typeName">
                       </div>
                     <div class="col-auto">
                       <button type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
@@ -189,7 +189,38 @@ $baseUrl = Url::base();
     <script>
       $(document).ready(function(){
           $("#myModalOnload").modal('show');
+		  
+		  $('.js_voter_details').click(function(){
+				getVoterDetails();
+				//exampleModal
+		  });
       });
+	  
+	  function getVoterDetails()
+{
+	var search = $('.js_search').val();
+	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
+	if(type){
+	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
+	}
+	$.ajax({  
+		url: base_url+'/?r=api/vote',
+		type: 'POST',
+        dataType: 'JSON',
+        data:{
+			search:search
+		},		
+		success: function(response) {   
+			if(response.voters && response.voters.length > 0){
+				pdfPrintVote(response.voters);
+			}else{
+				alert('No data found!');
+			}				
+		}  
+	});  
+	
+}
+
     </script>
   </body>
 </html>
