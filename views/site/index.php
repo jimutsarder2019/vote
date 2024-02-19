@@ -119,20 +119,20 @@ $baseUrl = Url::base();
             
              <div class="mb-3 row">
               <div class="col-md-8 row">
-                <label class="col-sm-4 pt-3"><strong>Company Name</strong></label>
-                <div class="col-sm-8 pt-3"><label>: ABC Company Limited</label></div>
+                <label class="col-sm-4 pt-3"><strong>Company Name: </strong></label>
+                <div class="col-sm-8 pt-3"><label class="company_name">ABC Company Limited</label></div>
 
-                <label class="col-sm-4 pt-3"><strong>Voter Name</strong></label>
-                <div class="col-sm-8 pt-3"><label>: Md. Ahasan Habib</label></div>
+                <label class="col-sm-4 pt-3"><strong>Voter Name: </strong></label>
+                <div class="col-sm-8 pt-3"><label class="voter_name">Md. Ahasan Habib</label></div>
 
-                <label class="col-sm-4 pt-3"><strong>Voter No</strong></label>
-                <div class="col-sm-8 pt-3"><label>: 547EDFD156</label></div>
+                <label class="col-sm-4 pt-3"><strong>Voter No: </strong></label>
+                <div class="col-sm-8 pt-3"><label class="voter_no">547EDFD156</label></div>
 
-                <label class="col-sm-4 pt-3"><strong>Membership Level</strong></label>
-                <div class="col-sm-8 pt-3"><label>: Premium</label></div>
+                <label class="col-sm-4 pt-3"><strong>Membership Level: </strong></label>
+                <div class="col-sm-8 pt-3"><label class="membership"></label></div>
 
-                <label class="col-sm-4 pt-3"><strong>Address</strong></label>
-                <div class="col-sm-8 pt-3"><label>: 123, Khulna, Bangladesh.</label></div>
+                <label class="col-sm-4 pt-3"><strong>Address: </strong></label>
+                <div class="col-sm-8 pt-3"><label class="address"></label></div>
               </div>
 
               <div class="col-md-4 text-right">
