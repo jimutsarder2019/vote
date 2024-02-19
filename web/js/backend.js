@@ -574,15 +574,7 @@ function pdfPrintVote(pdfData) {
 	//var divContents = document.getElementById("table-data").innerHTML;
 	var a = window.open('', '');
 	a.document.write('<html><style>table{border-collapse: collapse;} table, td, th{border:1px solid #000000 !important; padding:2px !important;}</style>');
-	a.document.write('<body ><h1>'+company_name+' Log Report</h1><br>');
-	a.document.write('<p>License Number: '+license_number+'</p>');
-	a.document.write('<p>Address: '+company_address+'</p>');
-	a.document.write('<p>Phone Number: '+company_phone+'</p>');
-	if(date_start && date_end){
-	    a.document.write('<p>Log Report: '+date_start+' to '+date_end+'</p>');
-	}else{
-		a.document.write('<p>Log Report:</p>');
-	}
+	a.document.write('<body ><h1>Voter List</h1><br>');
 	a.document.write('<br>');
 	a.document.write(pdfBodyContent);
 	a.document.write('</body></html>');
