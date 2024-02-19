@@ -187,6 +187,13 @@ class VoterController extends Controller
             return $this->redirect(['index']);
         }
     }
+	
+	public function actionGet()
+    {
+		$sql = 'SELECT * FROM voter';
+		$voters = Yii::$app->db->createCommand($sql)->queryAll();
+        die(json_encode(['voters'=>$voters]);
+    }
 
     /**
      * Deletes an existing Voter model.
