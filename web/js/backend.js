@@ -145,6 +145,7 @@ $(document).ready(function(){
 	
 	$('.js_voter_details').click(function(){
 		getVoterDetails();
+		//exampleModal
 	});
 });
 
