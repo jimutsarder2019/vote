@@ -65,7 +65,7 @@ class ApiController extends CustomController
 	public function actionVoter()
     {
 		$search = Yii::$app->request->post('search');
-		$where_condition = "where company like '%$search%' or name like '%$search%' or thana like '%$search%' or district like '%$search%'";
+		$where_condition = "where company like '%$search%' or name like '%$search%' or thana like '%$search%' or district like '%$search%' or address like '%$search%'";
 		
 		$sql = "SELECT * FROM voter $where_condition";
 		$voters = Yii::$app->db->createCommand($sql)->queryOne();

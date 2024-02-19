@@ -203,7 +203,6 @@ $baseUrl = Url::base();
 		$(".voter_no").html('-');
 		$(".membership").html('-');
 		$(".address").html('-');
-		$("#exampleModal").modal('show');
 		var search = $('.js_search').val();
 		if(search){
 		$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
