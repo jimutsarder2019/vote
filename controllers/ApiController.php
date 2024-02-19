@@ -60,6 +60,41 @@ class ApiController extends CustomController
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
     }
+	
+	
+	public function actionVoter()
+    {
+		$search = Yii::$app->request->post('search');
+		$where = [];
+		if($company){
+			$where[] = "company like '%$company%'";
+		}
+		
+		if($voter){
+			$where[] = "name like '%$voter%'";
+		}
+		
+		if($thana){
+			$where[] = "thana like '%$thana%'";
+		}
+		
+		if($district){
+			$where[] = "district like '%$district%'";
+		}
+		
+		if($division){
+			$where[] = "division like '%$division%'";
+		}
+		$where_condition = '';
+		if(!empty($where)){
+		    $where_condition = "where ".implode(" and ",$where);
+		}
+		
+		
+		$sql = "SELECT * FROM voter $where_condition";
+		$voters = Yii::$app->db->createCommand($sql)->queryAll();
+        die(json_encode(['voters'=>$voters]));
+    }
 
 	
 	public function actionUser()
