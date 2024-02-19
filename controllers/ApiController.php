@@ -31,7 +31,13 @@ class ApiController extends CustomController
 		$district = Yii::$app->request->post('district');
 		$division = Yii::$app->request->post('division');
 		
-		$sql = 'SELECT * FROM voter';
+		$sql = 'SELECT * FROM voter where 
+		company like '%$company%'
+		and name like '%$voter%'
+		and thana like '%$thana%'
+		and district like '%$district%'
+		and division like '%$division%'
+		';
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
     }
