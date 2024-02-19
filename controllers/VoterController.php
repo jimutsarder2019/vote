@@ -84,6 +84,7 @@ class VoterController extends Controller
 	
 	public function actionSearch()
     {
+		$this->layout = 'frontend';
         return $this->render('search');
     }
 

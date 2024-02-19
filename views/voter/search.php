@@ -22,13 +22,16 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-lg-6">
 					<div class="page-header-left">
 						<h3><?= Html::encode($this->title) ?></h3>
-						<?php if(@$page == 'voter'){ ?>
 						</br>
+						<div class="row">
+						<div class="col-md-2"><input class="form-control"></div>
+						<div class="col-md-2"><input></div>
+						<div class="col-md-2"><input></div>
+						<div class="col-md-2"><input></div>
+						<div class="col-md-2"><input></div>
+						</div>
 						
-						<p>
-							<?= Html::a('Create Voter', ['create'], ['class' => 'btn btn-success']) ?>
-						</p>
-						<?php  } ?>
+					
 					</div>
 				</div>
 			</div>
