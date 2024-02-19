@@ -135,6 +135,13 @@ $(document).ready(function(){
 		limitCount= 10;
 		generateLogData();
 	});
+	
+	
+	
+	$('.js_voter_search').click(function(){
+		reportType = 'pdf';
+		commonSearch('pdf');
+	});
 });
 
 
