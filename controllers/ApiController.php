@@ -68,7 +68,7 @@ class ApiController extends CustomController
 		$where_condition = "where company like '%$search%' or name like '%$search%' or thana like '%$search%' or district like '%$search%'";
 		
 		$sql = "SELECT * FROM voter $where_condition";
-		$voters = Yii::$app->db->createCommand($sql)->queryAll();
+		$voters = Yii::$app->db->createCommand($sql)->queryOne();
         die(json_encode(['voters'=>$voters]));
     }
 
