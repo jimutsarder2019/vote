@@ -52,11 +52,11 @@ class ApiController extends CustomController
 		}
 		$where_condition = '';
 		if(!empty($where)){
-		    $where_condition = implode(" and ",$where);
+		    $where_condition = "where ".implode(" and ",$where);
 		}
 		
 		
-		$sql = "SELECT * FROM voter where $where_condition";
+		$sql = "SELECT * FROM voter $where_condition";
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
     }
