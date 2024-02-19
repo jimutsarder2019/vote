@@ -365,25 +365,17 @@ function getPostParams()
 //exampleModal
 function getVoterDetails(type=false)
 {
-	var company = $('.js_company').val();
-	var voter = $('.js_voter').val();
-	var thana = $('.js_thana').val();
-	var district = $('.js_district').val();
-	var division = $('.js_division').val();
+	var js_search = $('.js_search').val();
 	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
 	if(type){
 	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
 	}
 	$.ajax({  
-		url: base_url+'/?r=api/get',
+		url: base_url+'/?r=api/vote',
 		type: 'POST',
         dataType: 'JSON',
         data:{
-			company:company,
-			voter:voter,
-			thana:thana,
-			district:district,
-			division:division,
+			search:search
 		},		
 		success: function(response) {   
 			if(response.voters && response.voters.length > 0){
