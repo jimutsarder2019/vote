@@ -17,6 +17,7 @@ use Yii;
  */
 class HomepagePopup extends \yii\db\ActiveRecord
 {
+	public $file1;
     /**
      * {@inheritdoc}
      */
@@ -36,6 +37,7 @@ class HomepagePopup extends \yii\db\ActiveRecord
             [['image_url', 'image_link'], 'string'],
             [['status'], 'integer'],
             [['created_at', 'updated_at', 'expire_date'], 'safe'],
+			[['file1'], 'file'],
         ];
     }
 
