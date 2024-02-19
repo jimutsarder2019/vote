@@ -358,6 +358,83 @@ function getPostParams()
 	return {page_name:page_name, report_type:reportType, offset:offset, limit:limit, search:search_value, from_date:date_start, to_date:date_end, from_hours:from_hours, from_mins:from_mins, to_hours:to_hours, to_mins:to_mins, router:router, user:user, mac:mac, src_ip:src_ip, dst_ip:dst_ip, nat_ip:nat_ip, src_port:src_port, dst_port:dst_port, nat_port:nat_port};
 }
 
+function generateVoterData(type=false)
+{
+	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
+	if(type){
+	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
+	}
+	$.ajax({  
+		url: base_url+'/?r=voter/get',
+		type: 'POST',
+        dataType: 'JSON',
+        data:getPostParams(),		
+		success: function(response) {   
+            console.log(response.data.length);
+			if(response.data && response.data.length > 0){
+				let tr = '';
+				$.each( response.data, function( key, value ) {
+					if(value['status']){
+						tr += '<tr>'+
+									'<td class="digits">'+value['datetime']+'</td>'+
+									'<td class="digits">'+value['host']+'</td>'+
+									'<td class="digits">'+value['user']+'</td>'+
+									'<td class="digits">'+value['protocol']+'</td>'+
+									'<td class="digits">'+value['mac']+'</td>'+
+									'<td class="digits">'+value['src_ip']+'</td>'+
+									'<td class="digits">'+value['src_port']+'</td>'+
+									'<td class="digits">'+value['destination_ip']+'</td>'+
+									'<td class="digits">'+value['destination_port']+'</td>'+
+									'<td class="digits">'+value['nat_ip']+'</td>'+
+									'<td class="digits">'+value['nat_port']+'</td>'+
+								'</tr>';
+					}
+				});
+			
+				if(tr){
+					$('.data-render').html(tr);
+				}else{
+					$('.data-render').html('<tr><td style="color:#FF0000">No data found!</td></tr>');
+					if(type){
+					    $('.js-report-loading').html('');
+					}
+				}
+				
+				if((type == 'csv') || (type == 'xlsx') || (type == 'pdf')){
+					if(response.report_status || (response.data.length > 3000)){
+						$('.js-report-loading').html('');
+						
+						if(response.process == 'yes'){
+						   alert('Your report generate data limitation have already exceed. So, Need some time to generate report. You will get it later in download report page.');
+						}else{
+							alert('You have already a pending/processing request. So please try again later for further request.');
+						}
+					}else{
+						if(type == 'csv'){
+							generateReport(response.data);
+						}else if(type == 'xlsx'){
+							excelReport(response.data);
+						}else if(type == 'pdf'){
+							pdfPrint(response.data);
+						}
+					}
+				}else{
+					/*if(response.data.length === 10000){
+						alert('Your searching data limitation have already exceed. So, Please add any one filtering option (Mac, Src IP, User, NAT, DST IP).');
+					}*/
+				}
+			}else{
+				alert('No data found!');
+                $('.data-render').html('<tr><td style="color:#FF0000">No data found!</td></tr>');
+				if((type == 'csv') || (type == 'xlsx') || (type == 'pdf')){
+					$('.js-report-loading').html('');
+				}
+			}				
+		}  
+	});  
+	
+}
+
 function generateLogData(type=false)
 {
 	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
