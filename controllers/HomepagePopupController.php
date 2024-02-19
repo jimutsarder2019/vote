@@ -156,17 +156,15 @@ class HomepagePopupController extends Controller
         $domestic_airlines_image_directory = 'homepage_popup';
 
         if ($model->load(Yii::$app->request->post())) {
-            $airlines_image = UploadedFile::getInstance($model, 'image_url');
-            if ($airlines_image != null) {
-                if (ImageHelper::ImageType($airlines_image)) {
-                    $airline_image_url = S3bucketHelper::upload_aws_s3_bucket($domestic_airlines_image_directory, $airlines_image);
-                    if (!empty($airline_image_url)) {
-                        $airline_image_file = S3bucketHelper::homepage_popup_images($airline_image_url);
-                        if (!empty($airline_image_file)) {
-                            $model->image_url = $airline_image_file;
-                        }
-                    }
-                }
+			
+			$model->file1 = UploadedFile::getInstance($model, 'file1');
+            if (!empty($model->file1)) {
+				
+				
+				$model->file1->saveAs('uploads/popup/' . $model->file1->baseName . '.' . $model->file1->extension);
+			    $model->image_url = 'uploads/popup/' . $model->file1->baseName . '.' . $model->file1->extension;
+				
+
             } else {
                 $model->image_url = $previous_image;
             }
