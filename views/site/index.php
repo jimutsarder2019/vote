@@ -210,6 +210,11 @@ $baseUrl = Url::base();
 			},		
 			success: function(response) {   
 				if(response.voters){
+					$(".company_name").html();
+					$(".voter_name").html();
+					$(".voter_no").html();
+					$(".membership").html();
+					$(".address").html();
 					$("#exampleModal").modal('show');
 				}else{
 					alert('No data found!');
