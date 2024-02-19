@@ -25,6 +25,12 @@ class ApiController extends CustomController
 	
 	public function actionGet()
     {
+		$company = Yii::$app->request->post('company');
+		$company = Yii::$app->request->post('company');
+		$company = Yii::$app->request->post('company');
+		$company = Yii::$app->request->post('company');
+		$company = Yii::$app->request->post('company');
+		
 		$sql = 'SELECT * FROM voter';
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
