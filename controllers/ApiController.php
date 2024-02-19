@@ -50,18 +50,13 @@ class ApiController extends CustomController
 		if($division){
 			$where[] = "division like '%$division%'";
 		}
+		$where_condition = '';
+		if(!empty($where)){
+		    $where_condition = implode(" and ",$where);
+		}
 		
-		echo implode(" and ",$where);
 		
-		die;
-		
-		$sql = "SELECT * FROM voter where 
-		company like '%$company%'
-		and name like '%$voter%'
-		and thana like '%$thana%'
-		and district like '%$district%'
-		and division like '%$division%'
-		";
+		$sql = "SELECT * FROM voter where $where_condition";
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
     }
