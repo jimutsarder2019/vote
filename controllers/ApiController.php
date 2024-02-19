@@ -36,22 +36,22 @@ class ApiController extends CustomController
 		}
 		
 		if($voter){
-			$where[] = "voter like '%$company%'";
+			$where[] = "name like '%$company%'";
 		}
 		
 		if($thana){
-			$where[] = "voter like '%$thana%'";
+			$where[] = "thana like '%$thana%'";
 		}
 		
 		if($district){
-			$where[] = "voter like '%$district%'";
+			$where[] = "district like '%$district%'";
 		}
 		
 		if($division){
-			$where[] = "voter like '%$division%'";
+			$where[] = "division like '%$division%'";
 		}
 		
-		echo implode("and",$where);
+		echo implode(" and ",$where);
 		
 		die;
 		
