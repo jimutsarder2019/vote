@@ -36,7 +36,7 @@ class ApiController extends CustomController
 		}
 		
 		if($voter){
-			$where[] = "name like '%$company%'";
+			$where[] = "name like '%$voter%'";
 		}
 		
 		if($thana){
