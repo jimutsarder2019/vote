@@ -609,9 +609,6 @@ function pdfPrintVote(pdfData) {
 											'<th scope="col">Src IP</th>'+
 											'<th scope="col">Port</th>'+
 											'<th scope="col">Dst IP</th>'+
-											'<th scope="col">Port</th>'+
-											'<th scope="col">NAT IP</th>'+
-											'<th scope="col">Port</th>'+
 										'</tr>'+
 									'</thead>'+
 									'<tbody class="data-render2">'+tr+'</tbody>'+
