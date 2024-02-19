@@ -570,7 +570,7 @@ function pdfPrintVote(pdfData) {
 	
 	var a = window.open('', '');
 	a.document.write('<html><style>table{border-collapse: collapse;} table, td, th{border:1px solid #000000 !important; padding:2px !important;}</style>');
-	a.document.write('<body ><h1>Voter List</h1>');
+	a.document.write('<body ><h1>ISPAB Voter List - 2024</h1>');
 	a.document.write(pdfBodyContent);
 	a.document.write('</body></html>');
 	a.document.close();
