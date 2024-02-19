@@ -552,14 +552,14 @@ function pdfPrintVote(pdfData) {
 								'<table class="table table-bordernone">'+
 									'<thead>'+
 										'<tr>'+
-											'<th scope="col">DateTime</th>'+
-											'<th scope="col">Router IP</th>'+
-											'<th scope="col">User</th>'+
-											'<th scope="col">Protocol</th>'+
-											'<th scope="col">Mac</th>'+
-											'<th scope="col">Src IP</th>'+
-											'<th scope="col">Port</th>'+
-											'<th scope="col">Dst IP</th>'+
+											'<th scope="col">Company</th>'+
+											'<th scope="col">Name</th>'+
+											'<th scope="col">ISPAB Member</th>'+
+											'<th scope="col">Mobile</th>'+
+											'<th scope="col">Email</th>'+
+											'<th scope="col">Thana</th>'+
+											'<th scope="col">District</th>'+
+											'<th scope="col">Address</th>'+
 										'</tr>'+
 									'</thead>'+
 									'<tbody class="data-render2">'+tr+'</tbody>'+
