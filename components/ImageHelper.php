@@ -1,7 +1,6 @@
 <?php
 
-
-namespace common\helpers;
+namespace app\components;
 use Yii;
 use yii\helpers\Url;
 
