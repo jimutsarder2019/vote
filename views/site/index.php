@@ -209,8 +209,8 @@ $baseUrl = Url::base();
 				search:search
 			},		
 			success: function(response) {   
-				if(response.voters && response.voters.length > 0){
-					pdfPrintVote(response.voters);
+				if(response.voters){
+					$("#exampleModal").modal('show');
 				}else{
 					alert('No data found!');
 				}				
