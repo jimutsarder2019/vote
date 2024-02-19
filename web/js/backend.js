@@ -586,17 +586,14 @@ function pdfPrintVote(pdfData) {
 	let tr = '';
 	$.each(pdfData, function( key, value ) {
 		tr += '<tr>'+
-					'<td class="digits">'+value['datetime']+'</td>'+
-					'<td class="digits">'+value['host']+'</td>'+
-					'<td class="digits">'+value['user']+'</td>'+
-					'<td class="digits">'+value['protocol']+'</td>'+
-					'<td class="digits">'+value['mac']+'</td>'+
-					'<td class="digits">'+value['src_ip']+'</td>'+
-					'<td class="digits">'+value['src_port']+'</td>'+
-					'<td class="digits">'+value['destination_ip']+'</td>'+
-					'<td class="digits">'+value['destination_port']+'</td>'+
-					'<td class="digits">'+value['nat_ip']+'</td>'+
-					'<td class="digits">'+value['nat_port']+'</td>'+
+					'<td class="digits">'+value['company']+'</td>'+
+					'<td class="digits">'+value['name']+'</td>'+
+					'<td class="digits">'+value['ispab_member']+'</td>'+
+					'<td class="digits">'+value['mobile1']+'</td>'+
+					'<td class="digits">'+value['email']+'</td>'+
+					'<td class="digits">'+value['thana']+'</td>'+
+					'<td class="digits">'+value['district']+'</td>'+
+					'<td class="digits">'+value['address']+'</td>'+
 				'</tr>';
 	});
 	
