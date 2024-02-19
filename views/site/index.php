@@ -198,6 +198,12 @@ $baseUrl = Url::base();
 	  
 	  function getVoterDetails()
       {
+		$(".company_name").html('-');
+		$(".voter_name").html('-');
+		$(".voter_no").html('-');
+		$(".membership").html('-');
+		$(".address").html('-');
+		$("#exampleModal").modal('show');
 		var search = $('.js_search').val();
 		if(search){
 		$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
@@ -210,11 +216,12 @@ $baseUrl = Url::base();
 			},		
 			success: function(response) {   
 				if(response.voters){
-					$(".company_name").html();
-					$(".voter_name").html();
-					$(".voter_no").html();
-					$(".membership").html();
-					$(".address").html();
+					$('.js_search').val('');
+					$(".company_name").html(response.voters.company);
+					$(".voter_name").html(response.voters.name);
+					$(".voter_no").html(response.voters.voter_no);
+					$(".membership").html(response.voters.ispab_member);
+					$(".address").html(response.voters.address);
 					$("#exampleModal").modal('show');
 				}else{
 					alert('No data found!');
