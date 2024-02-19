@@ -142,6 +142,10 @@ $(document).ready(function(){
 		reportType = 'pdf';
 		generateVoterData('pdf');
 	});
+	
+	$('.js_voter_details').click(function(){
+		getVoterDetails();
+	});
 });
 
 
