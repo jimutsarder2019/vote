@@ -565,13 +565,9 @@ function pdfPrintVote(pdfData) {
 									'<tbody class="data-render2">'+tr+'</tbody>'+
 								'</table>';
 	
-	
-				 //document.getElementById("table-data").innerHTML = pdfBodyContent;
-				
 	var date_start = $('.js_date_start').val();
 	var date_end = $('.js_date_end').val();
 	
-	//var divContents = document.getElementById("table-data").innerHTML;
 	var a = window.open('', '');
 	a.document.write('<html><style>table{border-collapse: collapse;} table, td, th{border:1px solid #000000 !important; padding:2px !important;}</style>');
 	a.document.write('<body ><h1>Voter List</h1><br>');
