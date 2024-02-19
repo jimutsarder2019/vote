@@ -197,26 +197,30 @@ $baseUrl = Url::base();
       });
 	  
 	  function getVoterDetails()
-{
-	var search = $('.js_search').val();
-	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
-	$.ajax({  
-		url: '<?=$baseUrl?>'+'/?r=api/voter',
-		type: 'POST',
-        dataType: 'JSON',
-        data:{
-			search:search
-		},		
-		success: function(response) {   
-			if(response.voters && response.voters.length > 0){
-				pdfPrintVote(response.voters);
-			}else{
-				alert('No data found!');
-			}				
-		}  
-	});  
-	
-}
+      {
+		var search = $('.js_search').val();
+		if(search){
+		$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
+		$.ajax({  
+			url: '<?=$baseUrl?>'+'/?r=api/voter',
+			type: 'POST',
+			dataType: 'JSON',
+			data:{
+				search:search
+			},		
+			success: function(response) {   
+				if(response.voters && response.voters.length > 0){
+					pdfPrintVote(response.voters);
+				}else{
+					alert('No data found!');
+				}				
+			}  
+		});
+		}else{
+			alert('Search string missing!');
+		}
+		
+     }
 
     </script>
   </body>
