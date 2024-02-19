@@ -371,41 +371,9 @@ function generateVoterData(type=false)
         data:{page:'home'},		
 		success: function(response) {   
 			if(response.voters && response.voters.length > 0){
-				let tr = '';
-				$.each( response.voters, function( key, value ) {
-					if(value['status']){
-						tr += '<tr>'+
-									'<td class="digits">'+value['datetime']+'</td>'+
-									'<td class="digits">'+value['host']+'</td>'+
-									'<td class="digits">'+value['user']+'</td>'+
-									'<td class="digits">'+value['protocol']+'</td>'+
-									'<td class="digits">'+value['mac']+'</td>'+
-									'<td class="digits">'+value['src_ip']+'</td>'+
-									'<td class="digits">'+value['src_port']+'</td>'+
-									'<td class="digits">'+value['destination_ip']+'</td>'+
-									'<td class="digits">'+value['destination_port']+'</td>'+
-									'<td class="digits">'+value['nat_ip']+'</td>'+
-									'<td class="digits">'+value['nat_port']+'</td>'+
-								'</tr>';
-					}
-				});
-			
-				if(tr){
-					$('.data-render').html(tr);
-				}else{
-					$('.data-render').html('<tr><td style="color:#FF0000">No data found!</td></tr>');
-					if(type){
-					    $('.js-report-loading').html('');
-					}
-				}
-				
 				pdfPrintVote(response.voters);
 			}else{
 				alert('No data found!');
-                $('.data-render').html('<tr><td style="color:#FF0000">No data found!</td></tr>');
-				if((type == 'csv') || (type == 'xlsx') || (type == 'pdf')){
-					$('.js-report-loading').html('');
-				}
 			}				
 		}  
 	});  
