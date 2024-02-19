@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Image',
                 'format' => 'raw',
-                'value' => function ($model) {
+                'value' => function ($model) use ($baseUrl) {
 					return Html::a(Html::img($baseUrl.'/'.$model->image_url, ['width' => '100px']), $baseUrl.'/'.$model->image_url, ['data-pjax' => 0, 'target' => '_blank']);
                 },
             ],
