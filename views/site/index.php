@@ -200,11 +200,8 @@ $baseUrl = Url::base();
 {
 	var search = $('.js_search').val();
 	$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
-	if(type){
-	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
-	}
 	$.ajax({  
-		url: base_url+'/?r=api/vote',
+		url: '<?=$baseUrl?>'+'/?r=api/voter',
 		type: 'POST',
         dataType: 'JSON',
         data:{
