@@ -21,23 +21,41 @@ class VisitorController extends Controller
      */
     public function behaviors()
     {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'rules' => [
-                    [
-                        'allow' => true,
-                        'roles' => ['@'],
+        return array_merge(
+            parent::behaviors(),
+            [
+				'as beforeRequest' => [  //if guest user access site so, redirect to login page.
+					'class' => 'yii\filters\AccessControl',
+					'rules' => [
+						[
+							'actions' => ['login', 'error'],
+							'allow' => true,
+						],
+						[
+							'allow' => true,
+							'roles' => ['@'],
+						],
+					],
+				],
+				'access' => [
+					'class' => AccessControl::class,
+					'only' => ['logout'],
+					'rules' => [
+						[
+							'actions' => ['logout'],
+							'allow' => true,
+							'roles' => ['@'],
+						],
+					],
+				],
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        //'delete' => ['POST'],
                     ],
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
+            ]
+        );
     }
 
     /**
