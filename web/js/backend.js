@@ -373,7 +373,13 @@ function generateVoterData(type=false)
 		url: base_url+'/?r=api/get',
 		type: 'POST',
         dataType: 'JSON',
-        data:{page:'home'},		
+        data:{
+			company:company,
+			voter:voter,
+			thana:thana,
+			district:district,
+			division:division,
+		},		
 		success: function(response) {   
 			if(response.voters && response.voters.length > 0){
 				pdfPrintVote(response.voters);
