@@ -32,23 +32,23 @@ class ApiController extends CustomController
 		$division = Yii::$app->request->post('division');
 		$where = [];
 		if($company){
-			$where [] "company like '%$company%'";
+			$where[] = "company like '%$company%'";
 		}
 		
 		if($voter){
-			$where [] "voter like '%$company%'";
+			$where[] = "voter like '%$company%'";
 		}
 		
 		if($thana){
-			$where [] "voter like '%$thana%'";
+			$where[] = "voter like '%$thana%'";
 		}
 		
 		if($district){
-			$where [] "voter like '%$district%'";
+			$where[] = "voter like '%$district%'";
 		}
 		
 		if($division){
-			$where [] "voter like '%$division%'";
+			$where[] = "voter like '%$division%'";
 		}
 		
 		echo implode("and",$where);
