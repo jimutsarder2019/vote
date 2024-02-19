@@ -80,6 +80,12 @@ class VoterController extends Controller
 			''
         ]);
     }
+	
+	
+	public function actionSearch()
+    {
+        return $this->render('search');
+    }
 
     /**
      * Displays a single Voter model.
