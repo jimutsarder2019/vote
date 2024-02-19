@@ -105,26 +105,14 @@ class HomepagePopupController extends Controller
         $domestic_airlines_image_directory = 'homepage_popup';
 
         if ($model->load(Yii::$app->request->post())) {
-            $airlines_image = UploadedFile::getInstance($model, 'image_url');
-            if (!empty($airlines_image)) {
-                if (ImageHelper::ImageType($airlines_image)) {
-                    $airline_image_url = S3bucketHelper::upload_aws_s3_bucket($domestic_airlines_image_directory, $airlines_image);
-                    if (!empty($airline_image_url)) {
-                        $airline_image_file = S3bucketHelper::homepage_popup_images($airline_image_url);
-                        if (!empty($airline_image_file)) {
-                            $model->image_url = $airline_image_file;
-                        } else {
-                            Yii::$app->session->setFlash('error', 'Image file name from s3bucket is empty');
-                            return $this->redirect(['create']);
-                        }
-                    } else {
-                        Yii::$app->session->setFlash('error', 'S3bucket object not found');
-                        return $this->redirect(['create']);
-                    }
-                } else {
-                    Yii::$app->session->setFlash('error', 'Image type not supported');
-                    return $this->redirect(['create']);
-                }
+            $model->file1 = UploadedFile::getInstance($model, 'image_url');
+            if (!empty($model->file1)) {
+				
+				
+				$model->file1->saveAs('uploads/login_logo/' . $model->file1->baseName . '.' . $model->file1->extension);
+			    $model->image_url = 'uploads/login_logo/' . $model->file1->baseName . '.' . $model->file1->extension;
+				
+
             } else {
                 Yii::$app->session->setFlash('error', 'Please Upload an Image');
                 return $this->redirect(['create']);
