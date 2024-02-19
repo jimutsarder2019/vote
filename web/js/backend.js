@@ -140,7 +140,7 @@ $(document).ready(function(){
 	
 	$('.js_voter_search').click(function(){
 		reportType = 'pdf';
-		commonSearch('pdf');
+		generateVoterData('pdf');
 	});
 });
 
@@ -368,7 +368,7 @@ function generateVoterData(type=false)
 		url: base_url+'/?r=voter/get',
 		type: 'POST',
         dataType: 'JSON',
-        data:getPostParams(),		
+        data:{page:'home'},		
 		success: function(response) {   
             console.log(response.data.length);
 			if(response.data && response.data.length > 0){
