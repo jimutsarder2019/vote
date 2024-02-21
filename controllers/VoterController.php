@@ -219,7 +219,8 @@ class VoterController extends Controller
                             $voter->mobile1 = @$data[4];
                             $voter->mobile2 = @$data[5];
                             $voter->email = @$data[6];
-                            $voter->thana = strtolower(@$data[7]);
+                            $voter->thana = @$data[8];
+                            $voter->license = strtolower(@$data[7]);
                             $voter->district = @$data[9];
                             $voter->division = @$data[10];
                             $voter->address = @$data[11];
