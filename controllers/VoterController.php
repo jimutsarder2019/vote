@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\components\SmsHelper;
+use yii\web\UploadedFile;
 
 /**
  * VoterController implements the CRUD actions for Voter model.
