@@ -251,6 +251,7 @@ $baseUrl = Url::base();
 							$(".address").html(response.voters.address);
 							$("#exampleModal").modal('show');
 						}else{
+							$('.js_search').val('');
 							alert('No data found!');
 						}				
 					}  
