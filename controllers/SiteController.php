@@ -79,7 +79,11 @@ class SiteController extends CustomController
     public function actionIndex()
     {
 		$this->layout = 'empty';
-		return $this->render('index');
+		
+		$sql = "SELECT * FROM tbl_homepage_popup where status = 1 order by id desc";
+		$popup = Yii::$app->db->createCommand($sql)->queryOne();
+		
+		return $this->render('index', ['popup'=>$popup]);
         //return $this->redirect(['login']);
     }
 
