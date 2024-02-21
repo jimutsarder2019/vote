@@ -191,19 +191,20 @@ $baseUrl = Url::base();
           $("#myModalOnload").modal('show');
 		  
 		  $('.js_voter_details').click(function(){
-				getVoterDetails();
+			    var type = $(this).data('type');
+				getVoterDetails(type);
 				//exampleModal
 		  });
       });
 	  
-	  function getVoterDetails()
+	  function getVoterDetails(type)
       {
 		$(".company_name").html('-');
 		$(".voter_name").html('-');
 		$(".voter_no").html('-');
 		$(".membership").html('-');
 		$(".address").html('-');
-		var search = $('.js_search').val();
+		var search = $('#js_search_'+type).val();
 		if(search){
 		$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
 		$.ajax({  
@@ -211,7 +212,8 @@ $baseUrl = Url::base();
 			type: 'POST',
 			dataType: 'JSON',
 			data:{
-				search:search
+				search:search,
+				type:type
 			},		
 			success: function(response) {   
 				if(response.voters){
