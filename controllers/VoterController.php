@@ -219,11 +219,11 @@ class VoterController extends Controller
                             $voter->company = $data[0];
                             $voter->name = $data[3];
                             $voter->ispab_member = $data[1];
-                            $voter->voter_no = $data[0];
+                            $voter->voter_no = $data[2];
                             $voter->mobile1 = $data[4];
                             $voter->mobile2 = $data[5];
                             $voter->email = $data[6];
-                            $voter->thana = $data[7];
+                            $voter->thana = strtolower($data[7]);
                             $voter->district = $data[10];
                             $voter->address = $data[11];
                             if ($voter->save(false)) {
