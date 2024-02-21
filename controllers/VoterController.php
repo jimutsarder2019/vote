@@ -217,10 +217,11 @@ class VoterController extends Controller
 							die;
                             $voter = new Voter();
                             $voter->company = $data[0];
-                            $voter->name = $data[0];
+                            $voter->name = $data[3];
                             $voter->ispab_member = $data[0];
                             $voter->voter_no = $data[0];
-                            $voter->mobile1 = $data[0];
+                            $voter->mobile1 = $data[4];
+                            $voter->mobile2 = $data[5];
                             $voter->email = $data[0];
                             $voter->thana = $data[0];
                             $voter->district = $data[0];

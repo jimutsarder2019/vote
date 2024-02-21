@@ -35,7 +35,7 @@ use yii\widgets\ActiveForm;
 						<div class="router-create">
 							    <?php $form = ActiveForm::begin(); ?>
 
-    <?php echo  $form->field($model, 'csv_file')->fileInput(['maxlength' => true,'class'=>'form-control','accept'=>".csv"]) ?>
+    <?php echo  $form->field($model, 'csv_file')->fileInput(['maxlength' => true,'class'=>'form-control']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
