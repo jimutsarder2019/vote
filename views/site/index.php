@@ -172,7 +172,7 @@ $baseUrl = Url::base();
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-body">
-                <img src="<?=$baseUrl?>/custom/medias/under-construction.jpg" width="100%">
+                <img src="<?=$baseUrl?>/<?=$popup?>" width="100%">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

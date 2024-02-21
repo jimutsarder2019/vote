@@ -68,8 +68,8 @@ class ApiController extends CustomController
 		$type = Yii::$app->request->post('type');
 		$where_condition = "company like '%$search%' or name like '%$search%' or thana like '%$search%' or district like '%$search%' or address like '%$search%'";
 		
-		$sql = "SELECT * FROM voter where license = '$type' and ($where_condition)";
-		$voters = Yii::$app->db->createCommand($sql)->queryOne();
+		$sql = "SELECT image_url FROM voter where license = '$type' and ($where_condition)";
+		$voters = Yii::$app->db->createCommand($sql)->queryScalar();
         die(json_encode(['voters'=>$voters]));
     }
 
