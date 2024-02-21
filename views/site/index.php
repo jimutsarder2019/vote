@@ -193,8 +193,17 @@ $baseUrl = Url::base();
 
     <script>
       $(document).ready(function(){
-		  var company_district = <?=$company_district?>
-		  var company_thana = <?=$company_thana?>
+		  var company_district = new Array();
+		  <?php foreach($company_district as $key => $val){ ?>
+			company_district.push('<?php echo $val; ?>');
+		  <?php } ?>
+		  
+		  var company_thana = new Array();
+		  <?php foreach($company_thana as $key => $val){ ?>
+			company_thana.push('<?php echo $val; ?>');
+		  <?php } ?>
+	
+	
 		  $( "#js_search_district" ).autocomplete({
 			  source: company_district
 		  });
