@@ -211,21 +211,18 @@ class VoterController extends Controller
                     $insert_data_count = 0;
                     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                         if ($row > 1) {
-							print '<pre>';
-							print_r($data);
-							print '</pre>';
-							die;
                             $voter = new Voter();
-                            $voter->company = $data[0];
-                            $voter->name = $data[3];
-                            $voter->ispab_member = $data[1];
-                            $voter->voter_no = $data[2];
-                            $voter->mobile1 = $data[4];
-                            $voter->mobile2 = $data[5];
-                            $voter->email = $data[6];
-                            $voter->thana = strtolower($data[7]);
-                            $voter->district = $data[10];
-                            $voter->address = $data[11];
+                            $voter->company = @$data[0];
+                            $voter->name = @$data[3];
+                            $voter->ispab_member = @$data[1];
+                            $voter->voter_no = @$data[2];
+                            $voter->mobile1 = @$data[4];
+                            $voter->mobile2 = @$data[5];
+                            $voter->email = @$data[6];
+                            $voter->thana = strtolower(@$data[7]);
+                            $voter->district = @$data[9];
+                            $voter->division = @$data[10];
+                            $voter->address = @$data[11];
                             if ($voter->save(false)) {
                                 $insert_data_count++;
                             }
