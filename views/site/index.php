@@ -69,10 +69,10 @@ $baseUrl = Url::base();
                   <div class="row g-3 align-items-center">
                       <div class="mb-3 col-auto">
                         <label for="name" class="form-label"><strong>Type</strong> Company Name / Owner's Name / Mobile Number / Email / ISPAB Member ID</label>
-                        <input type="name" class="form-control js_search" id="name" aria-describedby="typeName">
+                        <input id="js_search_thana" type="name" class="form-control js_search" id="name" aria-describedby="typeName">
                       </div>
                     <div class="col-auto">
-                      <button type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
+                      <button data-type="thana" type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
                     </div>
                   </div>
                 </form>
@@ -88,10 +88,10 @@ $baseUrl = Url::base();
                   <div class="row g-3 align-items-center">
                       <div class="mb-3 col-auto">
                         <label for="name" class="form-label"><strong>Type</strong> Company Name / Owner's Name / Mobile Number / Email / ISPAB Member ID</label>
-                        <input type="name" class="form-control" id="name" aria-describedby="typeName">
+                        <input id="js_search_district" type="name" class="form-control" id="name" aria-describedby="typeName">
                       </div>
                     <div class="col-auto">
-                      <button type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
+                      <button data-type="district" type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
                     </div>
                   </div>
                 </form>
