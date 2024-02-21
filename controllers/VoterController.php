@@ -218,14 +218,14 @@ class VoterController extends Controller
                             $voter = new Voter();
                             $voter->company = $data[0];
                             $voter->name = $data[3];
-                            $voter->ispab_member = $data[0];
+                            $voter->ispab_member = $data[1];
                             $voter->voter_no = $data[0];
                             $voter->mobile1 = $data[4];
                             $voter->mobile2 = $data[5];
-                            $voter->email = $data[0];
-                            $voter->thana = $data[0];
-                            $voter->district = $data[0];
-                            $voter->address = $data[0];
+                            $voter->email = $data[6];
+                            $voter->thana = $data[7];
+                            $voter->district = $data[10];
+                            $voter->address = $data[11];
                             if ($voter->save(false)) {
                                 $insert_data_count++;
                             }
