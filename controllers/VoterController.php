@@ -196,8 +196,9 @@ class VoterController extends Controller
     }
 	
 	
-	 public function actionUploadCsv()
+	public function actionUploadCsv()
     {
+		$this->layout = 'frontend';
         if(1 || Yii::$app->user->can('employee_attendance_upload_csv')){
             $model = new Voter();
             if ($model->load(Yii::$app->request->post())) {
@@ -209,6 +210,10 @@ class VoterController extends Controller
                     $insert_data_count = 0;
                     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                         if ($row > 1) {
+							print '<pre>';
+							print_r($data);
+							print '</pre>';
+							die;
                             $voter = new Voter();
                             $voter->company = $data[0];
                             $voter->name = $data[0];
@@ -219,9 +224,6 @@ class VoterController extends Controller
                             $voter->thana = $data[0];
                             $voter->district = $data[0];
                             $voter->address = $data[0];
-                            $voter->date = ApplicationHelper::format_date($data[1]);
-                            $voter->check_in = $data[2];
-                            $voter->check_out = $data[3];
                             if ($voter->save(false)) {
                                 $insert_data_count++;
                             }
