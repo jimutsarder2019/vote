@@ -231,29 +231,32 @@ $baseUrl = Url::base();
 		$(".address").html('-');
 		var search = $('#js_search_'+type).val();
 		if(search){
-		$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
-		$.ajax({  
-			url: '<?=$baseUrl?>'+'/?r=api/voter',
-			type: 'POST',
-			dataType: 'JSON',
-			data:{
-				search:search,
-				type:type
-			},		
-			success: function(response) {   
-				if(response.voters){
-					$('.js_search').val('');
-					$(".company_name").html(response.voters.company);
-					$(".voter_name").html(response.voters.name);
-					$(".voter_no").html(response.voters.voter_no);
-					$(".membership").html(response.voters.ispab_member);
-					$(".address").html(response.voters.address);
-					$("#exampleModal").modal('show');
-				}else{
-					alert('No data found!');
-				}				
-			}  
-		});
+			if(search.length > 2){
+				$('.data-render').html('<tr><td style="color:#FF0000">Loading......</td></tr>');
+				$.ajax({  
+					url: '<?=$baseUrl?>'+'/?r=api/voter',
+					type: 'POST',
+					dataType: 'JSON',
+					data:{
+						search:search,
+						type:type
+					},		
+					success: function(response) {   
+						if(response.voters){
+							$('.js_search').val('');
+							$(".company_name").html(response.voters.company);
+							$(".voter_name").html(response.voters.name);
+							$(".voter_no").html(response.voters.voter_no);
+							$(".membership").html(response.voters.ispab_member);
+							$(".address").html(response.voters.address);
+							$("#exampleModal").modal('show');
+						}else{
+							alert('No data found!');
+						}				
+					}  
+				});
+			}else{
+			}
 		}else{
 			alert('Search string missing!');
 		}
