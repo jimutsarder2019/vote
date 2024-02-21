@@ -210,7 +210,15 @@ class VoterController extends Controller
                     while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
                         if ($row > 1) {
                             $voter = new Voter();
-                            $voter->employee_id = $data[0];
+                            $voter->company = $data[0];
+                            $voter->name = $data[0];
+                            $voter->ispab_member = $data[0];
+                            $voter->voter_no = $data[0];
+                            $voter->mobile1 = $data[0];
+                            $voter->email = $data[0];
+                            $voter->thana = $data[0];
+                            $voter->district = $data[0];
+                            $voter->address = $data[0];
                             $voter->date = ApplicationHelper::format_date($data[1]);
                             $voter->check_in = $data[2];
                             $voter->check_out = $data[3];
