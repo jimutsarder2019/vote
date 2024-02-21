@@ -193,33 +193,15 @@ $baseUrl = Url::base();
 
     <script>
       $(document).ready(function(){
-		  var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( ".js_search" ).autocomplete({
-      source: availableTags
-    });
+		  var company_district = <?=$company_district?>
+		  var company_thana = <?=$company_thana?>
+		  $( "#js_search_district" ).autocomplete({
+			  source: company_district
+		  });
+		  
+		  $( "#js_search_thana" ).autocomplete({
+			  source: company_thana
+		  });
 	
 	
           $("#myModalOnload").modal('show');
