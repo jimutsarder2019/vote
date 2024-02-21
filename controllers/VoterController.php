@@ -194,6 +194,52 @@ class VoterController extends Controller
 		$voters = Yii::$app->db->createCommand($sql)->queryAll();
         die(json_encode(['voters'=>$voters]));
     }
+	
+	
+	 public function actionUploadCsv()
+    {
+        if(1 || Yii::$app->user->can('employee_attendance_upload_csv')){
+            $model = new EmployeeAttendance();
+            if ($model->load(Yii::$app->request->post())) {
+                $csv_file_data = UploadedFile::getInstance($model, 'csv_file');
+                try {
+                    $transaction = Yii::$app->db->beginTransaction();
+                    $handle = fopen("$csv_file_data->tempName", "r");
+                    $row = 1;
+                    $insert_data_count = 0;
+                    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                        if ($row > 1) {
+                            $attendence = new EmployeeAttendance();
+                            $attendence->employee_id = $data[0];
+                            $attendence->date = ApplicationHelper::format_date($data[1]);
+                            $attendence->check_in = $data[2];
+                            $attendence->check_out = $data[3];
+                            if ($attendence->save(false)) {
+                                $insert_data_count++;
+                            }
+                        }
+                        $row++;
+                    }
+                    $transaction->commit();
+                } catch (Exception $error) {
+                    $transaction->rollback();
+                }
+                if ($insert_data_count > 0) {
+                    Yii::$app->session->setFlash('success', 'Successfully saved');
+                    return $this->redirect(['index']);
+                } else {
+                    Yii::$app->session->setFlash('error', 'Error in saving');
+                    return $this->redirect(['index']);
+                }
+            }
+            return $this->render('upload_csv', [
+                'model' => $model,
+            ]);
+        }else{
+            throw new ForbiddenHttpException(Yii::t('yii', 'You are not allowed to perform this action.'));
+        }
+
+    }
 
     /**
      * Deletes an existing Voter model.
