@@ -80,8 +80,8 @@ class SiteController extends CustomController
     {
 		$this->layout = 'empty';
 		
-		$sql = "SELECT * FROM tbl_homepage_popup where status = 1 order by id desc";
-		$popup = Yii::$app->db->createCommand($sql)->queryOne();
+		$sql = "SELECT image_url FROM tbl_homepage_popup where status = 1 order by id desc";
+		$popup = Yii::$app->db->createCommand($sql)->queryScalar();
 		
 		return $this->render('index', ['popup'=>$popup]);
         //return $this->redirect(['login']);
