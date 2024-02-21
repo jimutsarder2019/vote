@@ -10,12 +10,30 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="employee-over-time-form">
 
-    <p>
-        <h2>Upload Csv file to insert employee attendance</h2>
-    </p>
-    <?php $form = ActiveForm::begin(); ?>
+<div class="page-body">
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="page-header">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="page-header-left">
+						    <h3>Upload Csv file to insert employee attendance</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
+
+	<!-- Container-fluid starts-->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xl-6 xl-100">
+				<div class="card">
+					<div class="card-body">
+						<div class="router-create">
+							    <?php $form = ActiveForm::begin(); ?>
 
     <?php echo  $form->field($model, 'csv_file')->fileInput(['maxlength' => true,'class'=>'form-control','accept'=>".csv"]) ?>
 
@@ -24,5 +42,11 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Container-fluid Ends-->
 </div>
