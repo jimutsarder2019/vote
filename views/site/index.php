@@ -256,6 +256,7 @@ $baseUrl = Url::base();
 					}  
 				});
 			}else{
+				alert('Minimum Search string limi 3!');
 			}
 		}else{
 			alert('Search string missing!');
