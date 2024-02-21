@@ -83,6 +83,11 @@ class SiteController extends CustomController
 		$sql = "SELECT image_url FROM tbl_homepage_popup where status = 1 order by id desc";
 		$popup = Yii::$app->db->createCommand($sql)->queryScalar();
 		
+		$sql = "SELECT company FROM voter where license='thana'";
+		$company_thana = Yii::$app->db->createCommand($sql)->queryColumn();
+		
+		$sql = "SELECT company FROM voter where license='district'";
+		$company_district = Yii::$app->db->createCommand($sql)->queryColumn();
 		return $this->render('index', ['popup'=>$popup]);
         //return $this->redirect(['login']);
     }
