@@ -88,7 +88,7 @@ class SiteController extends CustomController
 		
 		$sql = "SELECT company FROM voter where license='district'";
 		$company_district = Yii::$app->db->createCommand($sql)->queryColumn();
-		return $this->render('index', ['popup'=>$popup]);
+		return $this->render('index', ['popup'=>$popup, 'company_thana'=>$company_thana, 'company_district'=>$company_district]);
         //return $this->redirect(['login']);
     }
 
