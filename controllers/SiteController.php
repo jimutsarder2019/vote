@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Users;
+use app\models\Visitor;
 use app\components\ApplicationHelper;
 use app\init\CustomController;
 
@@ -106,7 +107,7 @@ class SiteController extends CustomController
         curl_close($ch);
         if ($data) {
             $location = json_decode($data);
-            
+            //print_r($location); die;
             $location_lat_lng = $location->loc;
             $lat_lng = explode(",",$location_lat_lng);
             $lat = $lat_lng[0];
