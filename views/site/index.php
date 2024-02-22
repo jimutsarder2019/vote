@@ -195,12 +195,12 @@ $baseUrl = Url::base();
       $(document).ready(function(){
 		  var company_district = new Array();
 		  <?php foreach($company_district as $key => $val){ ?>
-			company_district.push('<?php echo $val; ?>');
+			company_district.push("<?php echo $val; ?>");
 		  <?php } ?>
 		  
 		  var company_thana = new Array();
 		  <?php foreach($company_thana as $key => $val){ ?>
-			company_thana.push('<?php echo $val; ?>');
+			company_thana.push("<?php echo $val; ?>");
 		  <?php } ?>
 	
 	
