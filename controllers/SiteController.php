@@ -93,6 +93,31 @@ class SiteController extends CustomController
         //return $this->redirect(['login']);
     }
 	
+	public function geoLocate()
+    {
+        $ip  = !empty($_SERVER['HTTP_X_FORWARDED_FOR']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'];
+        $url = "http://ipinfo.io/".$ip."/geo";
+        $ch  = curl_init();
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        if ($data) {
+            $location = json_decode($data);
+            
+            $location_lat_lng = $location->loc;
+            $lat_lng = explode(",",$location_lat_lng);
+            $lat = $lat_lng[0];
+            $lon = $lat_lng[1];
+        
+            return ['lat'=>$lat, 'lng'=>$lon];
+        }
+        
+        return [];
+    }
+	
 	public function visitorEntry()
     {
         $ip = @$_SERVER['REMOTE_ADDR'];
