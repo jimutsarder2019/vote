@@ -79,7 +79,7 @@ class SiteController extends CustomController
     public function actionIndex()
     {
 		$this->layout = 'empty';
-		
+		$this->visitorEntry();
 		$sql = "SELECT image_url FROM tbl_homepage_popup where status = 1 order by id desc";
 		$popup = Yii::$app->db->createCommand($sql)->queryScalar();
 		
@@ -88,8 +88,37 @@ class SiteController extends CustomController
 		
 		$sql = "SELECT company FROM voter where license='district'";
 		$company_district = Yii::$app->db->createCommand($sql)->queryColumn();
+		
 		return $this->render('index', ['popup'=>$popup, 'company_thana'=>$company_thana, 'company_district'=>$company_district]);
         //return $this->redirect(['login']);
+    }
+	
+	public function visitorEntry()
+    {
+        $ip = @$_SERVER['REMOTE_ADDR'];
+        //$find_visitor_model = Visitor::find()
+           // ->where(['ip' => $ip])
+            //->one();
+            
+        $lat_lng = $this->geoLocate();
+        $lat = @$lat_lng['lat'];
+        $lng = @$lat_lng['lng'];
+            
+        $current_date = new \DateTime();
+        if (1) {
+           $visitor_model = new Visitor();
+           $visitor_model->ip = $ip;
+           $visitor_model->lat = $lat;
+           $visitor_model->lng = $lng;
+           $visitor_model->date = $current_date->format('Y-m-d');
+           $visitor_model->time = $current_date->format('h:i:s');
+           if($visitor_model->validate()){
+               $visitor_model->save();
+           }else{
+               //print_r($lat_lng);
+               //die;
+           }
+        }
     }
 
     /**
