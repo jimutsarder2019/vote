@@ -80,7 +80,7 @@ class SiteController extends CustomController
     public function actionIndex()
     {
 		$this->layout = 'empty';
-		$this->visitorEntry();
+		//$this->visitorEntry();
 		$sql = "SELECT image_url FROM tbl_homepage_popup where status = 1 order by id desc";
 		$popup = Yii::$app->db->createCommand($sql)->queryScalar();
 		

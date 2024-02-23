@@ -1,8 +1,9 @@
 <?php
+use app\assets\AppAsset;
 use yii\helpers\Url;
 use app\components\ApplicationHelper;
 use yii\bootstrap5\Html;
-
+AppAsset::register($this);
 $baseUrl = Url::base();
 
 $company_name = ApplicationHelper::getCompanyName();
@@ -16,7 +17,7 @@ $favicon_logo = ApplicationHelper::getCompanyName('favicon');
 $user_picture = ApplicationHelper::getLoginUserInfo();
 $isAdmin = ApplicationHelper::isAdmin();
 ?>
-
+<?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -154,7 +155,7 @@ $isAdmin = ApplicationHelper::isAdmin();
 </head>
 
 <body>
-
+<?php $this->beginBody() ?>
     <!-- page-wrapper Start-->
     <div class="page-wrapper">
 
@@ -565,6 +566,7 @@ $isAdmin = ApplicationHelper::isAdmin();
     <!--script admin-->
     <script src="<?=$baseUrl?>/template/js/admin-script.js"></script>
     <script src="<?=$baseUrl?>/js/backend.js"></script>
+<?php $this->endBody() ?>
 </body>
-
 </html>
+<?php $this->endPage() ?>

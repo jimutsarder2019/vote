@@ -11,10 +11,8 @@ $baseUrl = Url::base();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ISPAB Voter List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="<?=$baseUrl?>/custom/css/style.css">
-	
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-  
+    <link rel="stylesheet" type="text/css" href="<?=$baseUrl?>/custom/css/style.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
   </head>
   <body>
 
@@ -70,10 +68,18 @@ $baseUrl = Url::base();
             <div class="card-body py-5">
                 <form>
                   <div class="row g-3 align-items-center">
-                      <div class="mb-3 col-auto">
-                        <label for="name" class="form-label"><strong>Type</strong> Company Name / Owner's Name / Mobile Number / Email / ISPAB Member ID</label>
-                        <input id="js_search_thana" type="name" class="form-control js_search" id="name" aria-describedby="typeName">
-                      </div>
+                      <div class="col-auto">
+						<div>
+							<select id="js_search_thana" data-placeholder="Choose Company..." class="chosen-select" style="width:350px;" tabindex="4">
+								<option value=""></option>
+								<?php if(isset($company_thana) && !empty($company_thana)){ ?>
+									<?php foreach($company_thana as $thana){ ?>
+										<option><?=$thana?></option>
+									<?php } ?>
+								<?php } ?>
+							</select>
+						</div>
+					  </div>
                     <div class="col-auto">
                       <button data-type="thana" type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
                     </div>
@@ -89,9 +95,17 @@ $baseUrl = Url::base();
             <div class="card-body py-5">
                 <form>
                   <div class="row g-3 align-items-center">
-                      <div class="mb-3 col-auto">
-                        <label for="name" class="form-label"><strong>Type</strong> Company Name / Owner's Name / Mobile Number / Email / ISPAB Member ID</label>
-                        <input id="js_search_district" type="name" class="form-control js_search" id="name" aria-describedby="typeName">
+                      <div class="col-auto">
+						<div>
+						<select id="js_search_district" data-placeholder="Choose Company..." class="chosen-select" style="width:350px;" tabindex="4">
+							<option value=""></option>
+							<?php if(isset($company_district) && !empty($company_district)){ ?>
+								<?php foreach($company_district as $district){ ?>
+									<option><?=$district?></option>
+								<?php } ?>
+							<?php } ?>
+						</select>
+						</div>
                       </div>
                     <div class="col-auto">
                       <button data-type="district" type="button" class="btn btn-primary mt-3 px-5 js_voter_details">Search</button>
@@ -189,10 +203,15 @@ $baseUrl = Url::base();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
 </head>
 
     <script>
+	  var search_string = '';
       $(document).ready(function(){
+		  
+		  
+		  /*
 		  var company_district = new Array();
 		  <?php foreach($company_district as $key => $val){ ?>
 			company_district.push("<?php echo $val; ?>");
@@ -210,16 +229,22 @@ $baseUrl = Url::base();
 		  
 		  $( "#js_search_thana" ).autocomplete({
 			  source: company_thana
-		  });
+		  });*/
 	
 	
           $("#myModalOnload").modal('show');
 		  
 		  $('.js_voter_details').click(function(){
+			    search_string = '';
 			    var type = $(this).data('type');
 				getVoterDetails(type);
 				//exampleModal
 		  });
+		  
+		    $('.chosen-select').chosen({ width: '600px' }).change( function(obj, result) {
+				search_string = '';
+				search_string = result.selected;
+			});
       });
 	  
 	  function getVoterDetails(type)
