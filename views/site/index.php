@@ -37,10 +37,6 @@ $baseUrl = Url::base();
                 <a class="nav-link" href="#">About Us</a>
               </li> -->
             </ul>
-            <form class="d-flex me-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search voter list" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
             <!-- <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" aria-disabled="true">Login</a>
@@ -176,7 +172,7 @@ $baseUrl = Url::base();
   <div class="container-fluid">
     <div class="row pb-5">
       <div class="col-md-12">
-        <p>For details of eligibility criteria or any other additional information related to voter froms kindly visit www.ispab.org</p>
+        <p>All information is collected from the voter list published by ISPAB  (Date of publish February 06, 2024).</p>
         <!-- <p>For any other technical feedback or issues on the portal kindly send your feedback to <a href="#">ESPAB Support</a></p> -->
       </div>
     </div>
