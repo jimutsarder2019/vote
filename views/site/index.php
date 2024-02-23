@@ -13,6 +13,11 @@ $baseUrl = Url::base();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?=$baseUrl?>/custom/css/style.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+    <style>
+	img.voter-img{
+		width:200px;
+	}
+	</style>
   </head>
   <body>
 
@@ -152,8 +157,8 @@ $baseUrl = Url::base();
                 <div class="col-sm-8 pt-3"><label class="address"></label></div>
               </div>
 
-              <div class="col-md-4 text-right">
-                <img class="voter-img justify-content-right" src="<?=$baseUrl?>/custom/medias/voter.jpg" height="auto">
+              <div class="col-md-4 text-right js_profile">
+                
               </div>
 
             </div>
@@ -274,6 +279,7 @@ $baseUrl = Url::base();
 							$(".voter_no").html(response.voters.voter_no);
 							$(".membership").html(response.voters.ispab_member);
 							$(".address").html(response.voters.address);
+							$(".js_profile").html('<img class="voter-img justify-content-right" src="<?=$baseUrl?>/uploads/profile/'+response.voters.voter_no+'.png" height="auto">');
 							$("#exampleModal").modal('show');
 						}else{
 							$('.js_search').val('');
