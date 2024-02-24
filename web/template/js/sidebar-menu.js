@@ -79,8 +79,10 @@ $(".sidebar-menu>li a").filter(function () {
 
   var link = $(this).attr("href");
   //alert(link);
+  //alert(current);
   if (link) {
-    if (link.indexOf(current) > -1) {
+    //if (link.indexOf(current) > -1) {
+    if (link === '/vote/?'+current) {
       $(this).parents('li').addClass('active');
       $(this).addClass('active');
       // console.log(link + " found");

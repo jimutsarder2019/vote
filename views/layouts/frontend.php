@@ -121,12 +121,11 @@ $isAdmin = ApplicationHelper::isAdmin();
 	}
 	
 	.page-wrapper .page-body-wrapper .sidebar, .page-wrapper .page-body-wrapper .page-sidebar .main-header-left{
-		background-color:#ff8100;
+		
 		color: #FFFFFF;
 	}
 	
 	.page-wrapper .page-body-wrapper .page-sidebar .main-header-left a{
-		background-color:#ff8100;
 		color: #FFFFFF;
 	}
 	
@@ -165,7 +164,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="main-header-left d-lg-none w-auto">
                     <div class="logo-wrapper">
                         <a href="<?=$baseUrl;?>">
-							ISPAB
+							<img width="175px;" src="<?=$baseUrl;?>/image/logo.png"/>
                         </a>
                     </div>
                 </div>
@@ -233,7 +232,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                 <div class="main-header-left d-none d-lg-block">
                     <div class="logo-wrapper">
                         <a href="<?=$baseUrl?>">
-                            ISPAB
+                            <img width="175px;" src="<?=$baseUrl;?>/image/logo.png"/>
                         </a>
                     </div>
                 </div>
@@ -241,7 +240,7 @@ $isAdmin = ApplicationHelper::isAdmin();
                     <a href="javascript:void(0)" class="sidebar-back d-lg-none d-block"><i class="fa fa-times"
                             aria-hidden="true"></i></a>
 							
-					<?php if(!Yii::$app->user->isGuest){ ?>
+					<?php if(0 && !Yii::$app->user->isGuest){ ?>
 						<div class="sidebar-user">
 								<img class="img-60" src="<?=$baseUrl?>/template/images/dashboard/user3.jpg" alt="#">
 							<div>

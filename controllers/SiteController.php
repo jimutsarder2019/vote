@@ -84,10 +84,10 @@ class SiteController extends CustomController
 		$sql = "SELECT image_url FROM tbl_homepage_popup where status = 1 order by id desc";
 		$popup = Yii::$app->db->createCommand($sql)->queryScalar();
 		
-		$sql = "SELECT company FROM voter where license='thana'";
+		$sql = "SELECT company FROM voter where license='thana' order by TRIM(company)";
 		$company_thana = Yii::$app->db->createCommand($sql)->queryColumn();
 		
-		$sql = "SELECT company FROM voter where license='district'";
+		$sql = "SELECT company FROM voter where license='district' order by TRIM(company)";
 		$company_district = Yii::$app->db->createCommand($sql)->queryColumn();
 		
 		return $this->render('index', ['popup'=>$popup, 'company_thana'=>$company_thana, 'company_district'=>$company_district]);
