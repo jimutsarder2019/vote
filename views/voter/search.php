@@ -39,10 +39,41 @@ $this->params['breadcrumbs'][] = $this->title;
 							<div class="row">
 							<div class="col-md-2"><input placeholder="Company Name" class="js_company form-control"></div>
 							<div class="col-md-2"><input placeholder="Voter Name" class="js_voter form-control"></div>
-							<div class="col-md-2"><input placeholder="Thana"  class="js_thana form-control"></div>
-							<div class="col-md-2"><input placeholder="District"  class="js_district form-control"></div>
-							<div class="col-md-2"><input placeholder="Division"  class="js_division form-control"></div>
-							<div class="col-md-2"><button class="btn btn-success js_voter_search">Download</button></div>
+							<div class="col-md-2">
+							<select class="js_division form-control">
+							<option value="">Division</option>
+							<?php if(!empty($divisions)){  ?>
+								<?php foreach($divisions as $division){  ?>
+									<option value="<?=$division?>"><?=$division?></option>
+								<?php } ?>
+							<?php } ?>
+							</select>
+							</div>
+							<div class="col-md-2">
+								<select class="js_district form-control">
+								<option value="">District</option>
+								</select>
+							</div>
+							<div class="col-md-2">
+							    <select class="js_thana form-control">
+								<option value="">Thana</option>
+								</select>
+							</div>
+							<div class="col-md-2">
+								<div class="row">
+								    <div class="col-md-6">
+									<i data-type="search" class="btn btn-success fa fa-search js_voter_search"></i>
+									</div>
+									<div class="col-md-6">
+									<i data-type="download" class="btn btn-success fa fa-download js_voter_search"></i>
+								    </div>
+								</div>
+							</div>
+							    </br>
+							    </br>
+								<div class="col-md-12 js_search_voter_data mt-3">
+								
+								</div>
 							</div>
 						</div>
 					</div>

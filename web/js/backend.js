@@ -139,10 +139,73 @@ $(document).ready(function(){
 	
 	
 	$('.js_voter_search').click(function(){
-		reportType = 'pdf';
-		generateVoterData('pdf');
+		var reportType = $(this).data('type');
+		generateVoterData(reportType);
+	});
+	
+	
+	
+	$(".js_division").change(function(){
+		division = $(this).val();
+		generateDistrict(division);
+	});
+	
+	$(".js_district").change(function(){
+		district = $(this).val();
+		generateThana(district);
 	});
 });
+
+function generateDistrict(division){
+	let _option = '';
+	$.ajax({  
+		url: base_url+'/?r=api/district',
+		type: 'POST',
+        dataType: 'JSON',
+        data:{
+			division:division
+		},		
+		success: function(response) {   
+			if(response.district && response.district.length > 0){
+				
+				$.each( response.district, function( key, value ) {
+					
+					_option += '<option>'+value+'</option>';
+					
+				});
+				$(".js_district").html(_option);
+			}else{
+				alert('No data found!');
+			}				
+		}  
+	}); 
+}
+
+
+function generateThana(district){
+	let _option = '';
+	$.ajax({  
+		url: base_url+'/?r=api/thana',
+		type: 'POST',
+        dataType: 'JSON',
+        data:{
+			district:district
+		},		
+		success: function(response) {   
+			if(response.thana && response.thana.length > 0){
+				
+				$.each( response.thana, function( key, value ) {
+					
+					_option += '<option>'+value+'</option>';
+					
+				});
+				$(".js_thana").html(_option);
+			}else{
+				alert('No data found!');
+			}				
+		}  
+	}); 
+}
 
 
 function commonSearch(type)
@@ -362,6 +425,7 @@ function getPostParams()
 
 function generateVoterData(type=false)
 {
+	$(".js_search_voter_data").html('');
 	var company = $('.js_company').val();
 	var voter = $('.js_voter').val();
 	var thana = $('.js_thana').val();
@@ -371,26 +435,30 @@ function generateVoterData(type=false)
 	if(type){
 	    $('.js-report-loading').html('<tr><td style="color:#FF0000; font-size:21px;">Loading......</td></tr>');
 	}
-	$.ajax({  
-		url: base_url+'/?r=api/get',
-		type: 'POST',
-        dataType: 'JSON',
-        data:{
-			company:company,
-			voter:voter,
-			thana:thana,
-			district:district,
-			division:division,
-		},		
-		success: function(response) {   
-			if(response.voters && response.voters.length > 0){
-				pdfPrintVote(response.voters);
-			}else{
-				alert('No data found!');
-			}				
-		}  
-	});  
 	
+	if(company || voter || thana || district || division){
+		$.ajax({  
+			url: base_url+'/?r=api/get',
+			type: 'POST',
+			dataType: 'JSON',
+			data:{
+				company:company,
+				voter:voter,
+				thana:thana,
+				district:district,
+				division:division,
+			},		
+			success: function(response) {   
+				if(response.voters && response.voters.length > 0){
+					pdfPrintVote(response.voters, type);
+				}else{
+					alert('No data found!');
+				}				
+			}  
+		});
+	}else{
+		alert('Please apply any one filter!');
+	}
 }
 
 function generateLogData(type=false)
@@ -545,7 +613,7 @@ function generateReport(data){
 }
 
 
-function pdfPrintVote(pdfData) {
+function pdfPrintVote(pdfData, type) {
 	
 	let tr = '';
 	$.each(pdfData, function( key, value ) {
@@ -578,17 +646,20 @@ function pdfPrintVote(pdfData) {
 									'<tbody class="data-render2">'+tr+'</tbody>'+
 								'</table>';
 	
-	var date_start = $('.js_date_start').val();
-	var date_end = $('.js_date_end').val();
-	
-	var a = window.open('', '');
-	a.document.write('<html><style>table{border-collapse: collapse;} table, td, th{border:1px solid #000000 !important; padding:2px !important;}</style>');
-	a.document.write('<body ><h1>ISPAB Voter List - 2024</h1>');
-	a.document.write(pdfBodyContent);
-	a.document.write('</body></html>');
-	a.document.close();
-	$('.js-report-loading').html('');
-	a.print();
+	if(type === 'search'){
+	    $(".js_search_voter_data").html(pdfBodyContent);
+	}else{
+		var date_start = $('.js_date_start').val();
+		var date_end = $('.js_date_end').val();
+		var a = window.open('', '');
+		a.document.write('<html><style>table{border-collapse: collapse;} table, td, th{border:1px solid #000000 !important; padding:2px !important;}</style>');
+		a.document.write('<body ><h1>ISPAB Voter List - 2024</h1>');
+		a.document.write(pdfBodyContent);
+		a.document.write('</body></html>');
+		a.document.close();
+		$('.js-report-loading').html('');
+		a.print();
+	}
 }
 
 

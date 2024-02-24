@@ -85,8 +85,10 @@ class VoterController extends Controller
 	
 	public function actionSearch()
     {
+		$sql = "SELECT division FROM voter WHERE division !='' GROUP BY division";
+		$divisions = Yii::$app->db->createCommand($sql)->queryColumn();
 		$this->layout = 'frontend';
-        return $this->render('search');
+        return $this->render('search', ['divisions'=>$divisions]);
     }
 
     /**

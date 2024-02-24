@@ -61,6 +61,22 @@ class ApiController extends CustomController
         die(json_encode(['voters'=>$voters]));
     }
 	
+	public function actionDistrict()
+    {
+		$division = Yii::$app->request->post('division');		
+		$sql = "SELECT district FROM voter where division = '$division' group by district";
+		$district = Yii::$app->db->createCommand($sql)->queryColumn();
+        die(json_encode(['district'=>$district]));
+    }
+	
+	
+	public function actionThana()
+    {
+		$district = Yii::$app->request->post('district');		
+		$sql = "SELECT thana FROM voter where district = '$district' group by thana";
+		$thana = Yii::$app->db->createCommand($sql)->queryColumn();
+        die(json_encode(['thana'=>$thana]));
+    }
 	
 	public function actionVoter()
     {
