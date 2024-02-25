@@ -621,6 +621,7 @@ function pdfPrintVote(pdfData, type) {
 					'<td class="digits">'+value['company']+'</td>'+
 					'<td class="digits">'+value['name']+'</td>'+
 					'<td class="digits">'+value['ispab_member']+'</td>'+
+					'<td class="digits">'+value['voter_no']+'</td>'+
 					'<td class="digits">'+value['mobile1']+'</td>'+
 					'<td class="digits">'+value['email']+'</td>'+
 					'<td class="digits">'+value['thana']+'</td>'+
@@ -636,6 +637,7 @@ function pdfPrintVote(pdfData, type) {
 											'<th scope="col">Company</th>'+
 											'<th scope="col">Name</th>'+
 											'<th scope="col">ISPAB Member</th>'+
+											'<th scope="col">Voter Number</th>'+
 											'<th scope="col">Mobile</th>'+
 											'<th scope="col">Email</th>'+
 											'<th scope="col">Thana</th>'+

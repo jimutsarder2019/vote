@@ -14,10 +14,10 @@ $this->title = 'ISPAB Voter Search';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
  <style>
-	@media (max-width: 767px) {
-	  .js_search_voter_data  {
+    .js_search_voter_data  {
 		overflow-x: auto;
-	  }
+	}
+	@media (max-width: 767px) {
 	  .btn-success{
 		  margin-top: 5px;
 	  }
