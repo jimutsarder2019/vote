@@ -13,7 +13,16 @@ use yii\grid\GridView;
 $this->title = 'ISPAB Voter Search';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
+ <style>
+	@media (max-width: 767px) {
+	  .js_search_voter_data  {
+		overflow-x: auto;
+	  }
+	  .btn-success{
+		  margin-top: 5px;
+	  }
+	}
+	</style>
 <div class="page-body">
 	<!-- Container-fluid starts-->
 	<div class="container-fluid">
