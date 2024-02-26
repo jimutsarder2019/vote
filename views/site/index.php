@@ -28,9 +28,10 @@ $baseUrl = Url::base();
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary py-0">
         <div class="container">
-          <a class="navbar-brand" href="#">Voter List</a>
+          <a class="navbar-brand" href="#"><img src="web/image/logo.png" width="150px"></a>
+          <a class="navbar-brand" href="#"> Voter List</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,18 +44,25 @@ $baseUrl = Url::base();
                 <a class="nav-link" href="#">About Us</a>
               </li> -->
             </ul>
-            <!-- <ul class="navbar-nav mb-2 mb-lg-0">
+            <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" aria-disabled="true">Login</a>
+                <a class="nav-link d-inline-block" aria-disabled="true" href="https://www.facebook.com/profile.php?id=61556949321159"><img src="web/image/facebook.svg" width="20px"></a>
+                <a class="nav-link d-inline-block" aria-disabled="true" href="https://chat.whatsapp.com/E0OotRE5XpwGfHFnO3YQmi"><img src="web/image/whatsapp.svg" width="20px"></a>
               </li>
-            </ul> -->
+              <li class="nav-item ps-2">
+                <p id="demo" class="mb-0 pt-2" style="font-size: 18px;border: 1px solid #bfbfbf;border-radius: 100px;padding: 8px 20px;background: #ededed;"></p>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
-    <section class="py-5 main-sec">
+    <section class="py-5 main-sec" style="height: 80vh;">
       <div class="container">
-        <h1>ISPAB Associate Members Voter List-2024</h1>
+        <div class="text-center pb-3">
+          <img src="web/image/logo-big.png" width="400px">
+          <h1>ISPAB Associate Members Voter List-2024</h1>
+        </div>
 
         <ul class="nav nav-pills mt-5" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
@@ -174,7 +182,7 @@ $baseUrl = Url::base();
   </div>
 </div>
 
-<footer class="mt-5 pt-5 bg-light text-center">
+<footer class="mt-5 pt-5 bg-light text-center" style="padding-top:5em;">
   <div class="container-fluid">
     <div class="row pb-5">
       <div class="col-md-12">
@@ -184,8 +192,9 @@ $baseUrl = Url::base();
     </div>
     
   </div>
-  <div class="footer-bottom bg-dark tex-center">
-      <h6 class="elementor-heading-title elementor-size-default">Copyright © 2024</h6>
+  <div class="footer-bottom bg-dark d-flex justify-content-between px-5">
+      <h6 class="elementor-heading-title elementor-size-default align-self-center py-0">Copyright © 2024</h6>
+      <h6 class="elementor-heading-title elementor-size-default py-0" style="font-size:12px;">Design & Developed by <a href="https://www.facebook.com/profile.php?id=61556949321159"><img src="web/image/footer-logo.png" width="50px" style="padding-left:12px;"></a></h6>
 </div>
 </footer>
 
@@ -300,5 +309,36 @@ $baseUrl = Url::base();
      }
 
     </script>
+
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("May 5, 2024 15:37:25").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+          
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+          
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+        // Output the result in an element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+          
+        // If the count down is over, write some text 
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      </script>
   </body>
 </html>
