@@ -193,8 +193,8 @@ $baseUrl = Url::base();
     
   </div>
   <div class="footer-bottom bg-dark d-flex justify-content-between px-5">
-      <h6 class="elementor-heading-title elementor-size-default align-self-center py-0">Copyright © 2024</h6>
-      <h6 class="elementor-heading-title elementor-size-default py-0" style="font-size:12px;">Design & Developed by <a href="https://www.facebook.com/profile.php?id=61556949321159"><img src="web/image/footer-logo.png" width="50px" style="padding-left:12px;"></a></h6>
+      <h6 class="elementor-heading-title elementor-size-default align-self-center py-0"> Copyright © 2024</h6>
+      <h6 class="elementor-heading-title elementor-size-default py-0" style="font-size:12px; ">Design & Developed by <a href="https://www.facebook.com/profile.php?id=61556949321159"><img src="web/image/footer-logo.png" width="50px" style="padding-left:12px;"></a></h6>
 </div>
 </footer>
 
