@@ -157,7 +157,7 @@ $(document).ready(function(){
 });
 
 function generateDistrict(division){
-	let _option = '';
+	let _option = '<option value="">--District--</option>';
 	$.ajax({  
 		url: base_url+'/?r=api/district',
 		type: 'POST',
@@ -183,7 +183,7 @@ function generateDistrict(division){
 
 
 function generateThana(district){
-	let _option = '';
+	let _option = '<option value="">--Thana--</option>';
 	$.ajax({  
 		url: base_url+'/?r=api/thana',
 		type: 'POST',
@@ -425,6 +425,7 @@ function getPostParams()
 
 function generateVoterData(type=false)
 {
+	$(".js_voter_count").text('-');
 	$(".js_search_voter_data").html('');
 	var company = $('.js_company').val();
 	var voter = $('.js_voter').val();
@@ -450,8 +451,10 @@ function generateVoterData(type=false)
 			},		
 			success: function(response) {   
 				if(response.voters && response.voters.length > 0){
+					$(".js_voter_count").text(response.voters.length);
 					pdfPrintVote(response.voters, type);
 				}else{
+					$(".js_voter_count").text('-');
 					alert('No data found!');
 				}				
 			}  

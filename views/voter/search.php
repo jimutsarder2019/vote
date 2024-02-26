@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="page-header-left">
-						<h3><?= Html::encode($this->title) ?></h3>
+						<h3><?= Html::encode($this->title) ?> <span style="font-size:16px;">(Total Voter: <strong class="js_voter_count"><?=$voter_count?></strong>)</span></h3>
 					</div>
 				</div>
 			</div>
