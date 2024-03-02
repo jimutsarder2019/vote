@@ -9,6 +9,7 @@ $baseUrl = Url::base();
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="shortcut icon" href="web/image/fav.png">
     <title>ISPAB Voter List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="<?=$baseUrl?>/custom/css/style.css">  
@@ -45,23 +46,17 @@ $baseUrl = Url::base();
               </li> -->
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link d-inline-block" aria-disabled="true" href="https://www.facebook.com/profile.php?id=61556949321159"><img src="web/image/facebook.svg" width="20px"></a>
-                <a class="nav-link d-inline-block" aria-disabled="true" href="https://chat.whatsapp.com/E0OotRE5XpwGfHFnO3YQmi"><img src="web/image/whatsapp.svg" width="20px"></a>
-              </li>
-              <li class="nav-item ps-2">
-                <p id="demo" class="mb-0 pt-2" style="font-size: 18px;border: 1px solid #bfbfbf;border-radius: 100px;padding: 8px 20px;background: #ededed;"></p>
-              </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
-    <section class="py-5 main-sec" style="height: 80vh;">
+    <section class="py-5 main-sec" style="margin-bottom: 10em;">
       <div class="container">
         <div class="text-center pb-3">
           <img src="web/image/logo-big.png" width="400px">
           <h1>ISPAB Associate Members Voter List-2024</h1>
+          <p id="demo" class="mb-0 pt-2" style="font-size: 18px;border-radius: 100px;padding: 8px 20px;background: #ededed;display: inline-block;letter-spacing: 5px;"></p>
         </div>
 
         <ul class="nav nav-pills mt-5" id="pills-tab" role="tablist">
@@ -186,6 +181,10 @@ $baseUrl = Url::base();
   <div class="container-fluid">
     <div class="row pb-5">
       <div class="col-md-12">
+        <div class="mb-3">
+          <a class="nav-link d-inline-block me-3" aria-disabled="true" href="https://www.facebook.com/profile.php?id=61556949321159"><img src="web/image/facebook.png" width="25px"></a>
+          <a class="nav-link d-inline-block" aria-disabled="true" href="https://chat.whatsapp.com/E0OotRE5XpwGfHFnO3YQmi"><img src="web/image/whatsapp.png" width="30px"></a>
+        </div>
         <p>All information is collected from the voter list published by ISPAB  (Date of publish February 06, 2024).</p>
         <!-- <p>For any other technical feedback or issues on the portal kindly send your feedback to <a href="#">ESPAB Support</a></p> -->
       </div>
