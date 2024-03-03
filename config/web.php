@@ -57,12 +57,13 @@ $config = [
         ],
         'db' => $db,
         
-        /*'urlManager' => [
+        'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'participation-candidate' => 'site/participation-candidate',
             ],
-        ],*/
+        ],
         
     ],
     'params' => $params,

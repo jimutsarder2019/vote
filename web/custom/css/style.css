@@ -75,3 +75,17 @@ footer{
         text-align: left !important;
     }
 }
+
+/*participation-candidate-details-------------------------------------------*/
+
+.participation-candidate-details {
+    padding: 1em;
+    background: #f1f1f1a3;
+    border: 1px solid #00000030;
+    border-radius: 12px;
+    transition: all 0.5s;
+    height: 100%;
+}
+.participation-candidate-details:hover {
+    box-shadow: 0px 2px 12px #00000030;
+}
