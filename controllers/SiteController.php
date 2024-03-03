@@ -228,4 +228,8 @@ class SiteController extends CustomController
     {
         return $this->render('about');
     }
+    public function actionParticipationCandidate()
+    {
+        return $this->render('participationCandidate.php');
+    }
 }
